@@ -1,0 +1,14 @@
+{
+  "name": "landing",
+  "version": "1.0.0",
+  "description": "Nekuno landing page",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/nekuno/landing.git"
+  },
+  "author": "Nekuno",
+  "homepage": "https://bitbucket.org/nekuno/landing#readme"
+}
