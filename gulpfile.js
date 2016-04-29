@@ -4,13 +4,14 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 var rename = require('gulp-rename');
+var minifyCss = require('gulp-minify-css');
 //var uglify = require('gulp-uglify');
-//var minifyCss = require('gulp-minify-css');
 
 // Convert scss to css
 gulp.task('sass', function() {
     return gulp.src('src/scss/main.scss')
         .pipe(sass.sync().on('error', sass.logError))
+        .pipe(minifyCss())
         .pipe(concat('main.css'))
         .pipe(gulp.dest('./www/css/'))
         .pipe(connect.reload());
@@ -32,11 +33,14 @@ gulp.task('images', function() {
         .pipe(gulp.dest('www/css/img/'));
 });
 
-// Copy vendor files used directly
-gulp.task('copy-normalize', function() {
+// Copy and minimize normalize.css
+gulp.task('minify-normalize', function() {
     return gulp.src('node_modules/normalize.css/normalize.css')
+        .pipe(minifyCss())
+        .pipe(concat('normalize.min.css'))
         .pipe(gulp.dest('www/css/'));
 });
+// Copy vendor files used directly
 gulp.task('copy-html5shiv', function() {
     return gulp.src('node_modules/html5shiv/dist/html5shiv.min.js')
         .pipe(gulp.dest('www/js/vendor/'));
@@ -54,7 +58,7 @@ gulp.task('build-vendor-js', function() {
         'node_modules/section-scroll/jquery.section-scroll.min.js'
     ];
     return gulp.src(paths)
-        .pipe(concat('vendor.js'))
+        .pipe(concat('plugins.js'))
         .pipe(gulp.dest('www/js/'))
         .pipe(connect.reload());
 });
@@ -83,5 +87,5 @@ gulp.task('serve', function() {
     });
 });
 
-gulp.task('build', ['sass', 'files', 'fonts', 'images', 'copy-normalize', 'copy-html5shiv', 'copy-jquery', 'build-vendor-js', 'build-js']);
+gulp.task('build', ['sass', 'files', 'fonts', 'images', 'minify-normalize', 'copy-html5shiv', 'copy-jquery', 'build-vendor-js', 'build-js']);
 gulp.task('dev', ['build', 'serve', 'watch']);
