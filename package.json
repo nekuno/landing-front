@@ -3,12 +3,31 @@
   "version": "1.0.0",
   "description": "Nekuno landing page",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "napa"
+  },
+  "napa": {
+    "sliiide": "ahmedrad/sliiide",
+    "section-scroll": "m-danish-iqbal/section-scroll"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/nekuno/landing.git"
   },
   "author": "Nekuno",
-  "homepage": "https://bitbucket.org/nekuno/landing#readme"
+  "homepage": "https://bitbucket.org/nekuno/landing#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^4.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "napa": "^2.3.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "html5shiv": "^3.7.3",
+    "jquery": "^1.11.3",
+    "normalize.css": "github:necolas/normalize.css"
+  }
 }

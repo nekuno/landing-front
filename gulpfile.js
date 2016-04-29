@@ -1,0 +1,87 @@
+var gulp = require('gulp');
+var source = require('vinyl-source-stream');
+var sass = require('gulp-sass');
+var concat = require('gulp-concat');
+var connect = require('gulp-connect');
+var rename = require('gulp-rename');
+//var uglify = require('gulp-uglify');
+//var minifyCss = require('gulp-minify-css');
+
+// Convert scss to css
+gulp.task('sass', function() {
+    return gulp.src('src/scss/main.scss')
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(concat('main.css'))
+        .pipe(gulp.dest('./www/css/'))
+        .pipe(connect.reload());
+});
+
+// Copy files
+gulp.task('files', function() {
+    return gulp.src('src/*')
+        .pipe(gulp.dest('www/'));
+});
+// Copy fonts
+gulp.task('fonts', function() {
+    return gulp.src('src/scss/fonts/*')
+        .pipe(gulp.dest('www/css/fonts/'));
+});
+// Copy images
+gulp.task('images', function() {
+    return gulp.src(['src/scss/img/*', 'src/scss/img/**/*'])
+        .pipe(gulp.dest('www/css/img/'));
+});
+
+// Copy vendor files used directly
+gulp.task('copy-normalize', function() {
+    return gulp.src('node_modules/normalize.css/normalize.css')
+        .pipe(gulp.dest('www/css/'));
+});
+gulp.task('copy-html5shiv', function() {
+    return gulp.src('node_modules/html5shiv/dist/html5shiv.min.js')
+        .pipe(gulp.dest('www/js/vendor/'));
+});
+gulp.task('copy-jquery', function() {
+    return gulp.src('node_modules/jquery/dist/jquery.min.js')
+        .pipe(gulp.dest('www/js/vendor/'));
+});
+
+// Build vendor files used together
+gulp.task('build-vendor-js', function() {
+    var paths = [
+        'src/js/plugins.js',
+        'node_modules/sliiide/slide.min.js',
+        'node_modules/section-scroll/jquery.section-scroll.min.js'
+    ];
+    return gulp.src(paths)
+        .pipe(concat('vendor.js'))
+        .pipe(gulp.dest('www/js/'))
+        .pipe(connect.reload());
+});
+
+// Copy main.js
+gulp.task('build-js', function() {
+    return gulp.src('src/js/main.js')
+        .pipe(gulp.dest('www/js/'))
+        .pipe(connect.reload());
+});
+
+
+// Rerun tasks whenever a file changes.
+gulp.task('watch', ['build'], function() {
+    gulp.watch('./src/scss/**/*', ['sass']);
+    gulp.watch('./src/js/**/*', ['build-js']);
+});
+
+// Development
+gulp.task('serve', function() {
+    connect.server({
+        root      : 'www',
+        host      : '*',
+        port      : 8000,
+        livereload: true
+    });
+});
+
+gulp.task('build', ['sass', 'files', 'fonts', 'images', 'copy-normalize', 'copy-html5shiv', 'copy-jquery', 'build-vendor-js', 'build-js']);
+gulp.task('dev', ['build', 'serve', 'watch']);
