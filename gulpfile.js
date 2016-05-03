@@ -58,8 +58,8 @@ gulp.task('copy-jquery', function() {
 gulp.task('build-vendor-js', function() {
     var paths = [
         'src/js/plugins.js',
-        'node_modules/sliiide/slide.min.js',
-        'node_modules/section-scroll/jquery.section-scroll.min.js'
+        'node_modules/sliiide/sliiide.min.js',
+        'node_modules/section-scroll/jquery.section-scroll.js'
     ];
     return gulp.src(paths)
         .pipe(concat('plugins.js'))

@@ -172,6 +172,7 @@ $dark-blue: #141134;
 $deep-purple: #9f82e3;
 $dark-purple: #6342b1;;
 $dark-gray: #424753;
+$green: #69d6b8;
 
 
 /******************************* All ******************************************/
@@ -182,38 +183,109 @@ body {
     font-family: $nekuno-font;
     text-align: center;
 
+    h3 {
+        letter-spacing: 1px;
+    }
     a {
         color: white;
         font-family: $link-font;
         opacity: 0.5;
         text-decoration: none;
+
+        &.button {
+            background: $green;
+            border-radius: 17px;
+            font-family: $nekuno-font;
+            font-weight: 700;
+            height: 15px;
+            letter-spacing: 2px;
+            opacity: 1;
+            padding: 10px 25px 9px 25px;
+            text-transform: uppercase;
+        }
+    }
+
+    nav#navigation-mobile {
+        background: $dark-purple;
+        float: right;
+        margin-bottom: -100%;
+        padding: 74px 0;
+        text-align: left;
+        visibility: hidden;
+        width: 250px;
+        z-index: 11;
+
+        .login-button {
+            margin: 0 auto 89px auto;
+            text-align: center;
+        }
+        .navigation-item {
+            margin-left: 38px;
+
+            h3 {
+                cursor: pointer;
+                text-transform: uppercase;
+            }
+            ul.sub-navigation-items {
+                list-style-type: none;
+                -moz-padding-start: 0;
+                -webkit-padding-start: 0;
+                li {
+                    text-decoration: none;
+
+                    a {
+                        .active {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        .nav-product, .nav-nekuno, .nav-support {
+            ul.sub-navigation-items {
+                display: none;
+            }
+        }
+        .active {
+            ul.sub-navigation-items {
+                display: block;
+            }
+        }
+    }
+
+    nav#navigation {
+        display: none;
+    }
+
+    section#menu {
+        position: fixed;
+        width: 100%;
+        z-index: 111;
+        #hamburger {
+            background-image: url('img/hamburger.png');
+            cursor: pointer;
+            float: right;
+            height: 15px;
+            right: 24px;
+            margin-top: 41px;
+            width: 20px;
+
+        }
     }
 
     .container {
         .header-container {
-            .wrapper {
-                text-align: left;
-                .title {
-                    display: inline-block;
+            text-align: left;
+            header.title {
+                display: inline-block;
+                padding-left: 29px;
+                padding-top: 36px;
+                width: 85px;
 
-                    img {
-                    }
-                }
-                nav {
-                    display: inline-block;
+                img {
                     float: right;
-                    ul {
-                        li {
-                            display: inline-block;
-                            text-decoration: none;
-
-                            a {
-                                .active {
-                                    opacity: 1;
-                                }
-                            }
-                        }
-                    }
+                    width: 100%;
                 }
             }
         }
