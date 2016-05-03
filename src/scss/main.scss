@@ -184,12 +184,12 @@ body {
     font-family: $nekuno-font;
     text-align: center;
 
-    h3 {
+    h3, h4 {
         letter-spacing: 1px;
     }
     a {
         color: white;
-        font-family: $link-font;
+        //font-family: $link-font;
         opacity: 0.5;
         text-decoration: none;
 
@@ -223,7 +223,7 @@ body {
         .navigation-item {
             margin-left: 38px;
 
-            h3 {
+            h4 {
                 cursor: pointer;
                 text-transform: uppercase;
             }
@@ -232,6 +232,7 @@ body {
                 -moz-padding-start: 0;
                 -webkit-padding-start: 0;
                 li {
+                    padding-bottom: 10px;
                     text-decoration: none;
 
                     a {
@@ -314,7 +315,7 @@ body {
                     }
 
                     section#for-you {
-
+                        margin-top: 30px;
                     }
                     section#amazing {
 

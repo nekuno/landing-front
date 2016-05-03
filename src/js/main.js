@@ -14,7 +14,7 @@
     var navigationMobile = $("#navigation-mobile");
     navigationMobile.sliiide(settings); //initialize sliiide
 
-    navigationMobile.find('.navigation-item h3').on('click', selectItem);
+    navigationMobile.find('.navigation-item h4').on('click', selectItem);
     
     function selectItem(e) {
         var item = $(e.target).parent('.navigation-item');
