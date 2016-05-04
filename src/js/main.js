@@ -36,11 +36,17 @@
         //transitionEnd: changeActiveDot
     });
 
+    $('.slider-dots .slider-dot').on('click', goToSlide)
+
     function changeActiveDot(index) {
-        var newIndex = index === 3 ? 1 : index + 1;
         var sliderDotsElems = $('.slider-dots .slider-dot');
-        sliderDotsElems.eq(index - 1).removeClass('active');
-        sliderDotsElems.eq(newIndex - 1).addClass('active');
+        sliderDotsElems.closest('.active').removeClass('active');
+        sliderDotsElems.eq(index).addClass('active');
+    }
+
+    function goToSlide(e) {
+        var index = $(e.target).data('index');
+        window.mySwipe.slide(index);
     }
 
     /** End Swipe settings (Mobile slider) **/
