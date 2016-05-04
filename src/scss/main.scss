@@ -174,6 +174,8 @@ $dark-purple: #6342b1;;
 $dark-gray: #424753;
 $green: #69d6b8;
 $top-transparency-layer: #151132;
+$slider-transparency-layer-bottom: #141134;
+$slider-transparency-layer-top: rgba(99, 65, 177, 0.27);
 
 
 /******************************* All ******************************************/
@@ -186,7 +188,7 @@ body {
     text-align: center;
 
     h3, h4 {
-        letter-spacing: 1px;
+        //letter-spacing: 1px;
     }
     a {
         color: white;
@@ -213,7 +215,7 @@ body {
         cursor: pointer;
         display: inline-block;
         font-size: 0.9em;
-        margin: 0 1%;
+        margin: 0 1% 5px 1%;
         padding-top: 2px;
         padding-bottom: 1px;
         text-align: left;
@@ -321,7 +323,7 @@ body {
             .main.wrapper {
                 article {
                     section {
-                        h2 {
+                        h2, h3 {
                             padding: 0 10%;
                         }
                         p {
@@ -333,6 +335,7 @@ body {
                         }
                         section.app-store-buttons {
                             font-size: 0.9em;
+
                             .icon {
                                 display: inline-block;
                                 height: 15px;
@@ -358,7 +361,7 @@ body {
                             }
                         }
                         figure.section-figure {
-                            margin: 40px auto 60px;
+                            margin: 35px auto 60px;
                             width: 100%;
 
                             img {
@@ -374,10 +377,63 @@ body {
                         margin-top: 40px;
                     }
                     section#look-like {
+                        .slider-transparency-layer {
+                            background-image: linear-gradient(180deg, $slider-transparency-layer-bottom 0%, $slider-transparency-layer-top 100%);
+                            height: 531px;
+                            margin-bottom: -451px;
+                            margin-top: -175px;
+                            width: 100%;
+                        }
+                        #slider {
+                            img {
+                                width: 75%;
+                            }
+                            h3 {
+                                margin-top: 30px;
+                            }
+                            p {
+                                font-size: 0.9em;
+                                margin-bottom: 10px;
+                            }
+                        }
+                        .swipe {
+                            margin-top: -100px;
+                            overflow: hidden;
+                            visibility: hidden;
+                            position: relative;
+                        }
+                        .swipe-wrap {
+                            overflow: hidden;
+                            position: relative;
+                        }
+                        .swipe-wrap > div {
+                            float:left;
+                            width:100%;
+                            position: relative;
+                        }
+                        .slider-dots {
+                            .slider-dot {
+                                background: white;
+                                border-radius: 2.5px;
+                                display: inline-block;
+                                height: 5px;
+                                margin: 2.5px;
+                                width: 5px;
+                                -webkit-border-radius: 2.5px;
+                                -moz-border-radius: 2.5px;
+                                -webkit-transition: width 400ms ease-out;
+                                -moz-transition: width 400ms ease-out;
+                                -o-transition: width 400ms ease-out;
+                                transition: width 400ms ease-out;
 
+                                &.active {
+                                    width: 25px;
+                                }
+                            }
+                        }
                     }
                     section#holy-privacy {
-
+                        margin-top: 70px;
                     }
                     section#discover-the-world {
 

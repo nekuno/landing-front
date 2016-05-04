@@ -1,5 +1,5 @@
 (function($) {
-    
+
     /** Start sliiide settings (Mobile navigation) **/
     var settings = {
         toggle: "#hamburger", // the selector for the menu toggle, whatever clickable element you want to activate or deactivate the menu. A click listener will be added to this element.
@@ -15,7 +15,7 @@
     navigationMobile.sliiide(settings); //initialize sliiide
 
     navigationMobile.find('.navigation-item h4').on('click', selectItem);
-    
+
     function selectItem(e) {
         var item = $(e.target).parent('.navigation-item');
         navigationMobile.find('.active').removeClass('active');
@@ -23,5 +23,26 @@
     }
 
     /** End sliiide settings (Mobile navigation) **/
-    
+
+    /** Start Swipe settings (Mobile slider) **/
+    window.mySwipe = new Swipe(document.getElementById('slider'), {
+        startSlide: 0,
+        speed: 400,
+        auto: 3000,
+        continuous: true,
+        disableScroll: false,
+        stopPropagation: false,
+        callback: changeActiveDot
+        //transitionEnd: changeActiveDot
+    });
+
+    function changeActiveDot(index) {
+        var newIndex = index === 3 ? 1 : index + 1;
+        var sliderDotsElems = $('.slider-dots .slider-dot');
+        sliderDotsElems.eq(index - 1).removeClass('active');
+        sliderDotsElems.eq(newIndex - 1).addClass('active');
+    }
+
+    /** End Swipe settings (Mobile slider) **/
+
 })(jQuery);

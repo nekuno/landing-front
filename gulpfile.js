@@ -59,6 +59,7 @@ gulp.task('build-vendor-js', function() {
     var paths = [
         'src/js/plugins.js',
         'node_modules/sliiide/sliiide.min.js',
+        'node_modules/Swipe/swipe.js',
         'node_modules/section-scroll/jquery.section-scroll.js'
     ];
     return gulp.src(paths)
