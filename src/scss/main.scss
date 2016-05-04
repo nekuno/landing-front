@@ -435,9 +435,24 @@ body {
                     }
                     section#holy-privacy {
                         margin-top: 70px;
+
+                        section {
+                            display: inline-block;
+
+                            .section-figure {
+                                margin-bottom: 25px;
+                                img {
+                                    width: 80%;
+                                }
+                            }
+                        }
                     }
                     section#discover-the-world {
+                        margin-top: 50px;
 
+                        section {
+                            margin-top: 30px;
+                        }
                     }
                     section#opinions {
 
@@ -445,6 +460,8 @@ body {
                     section#blog-posts {
                         background: white;
                         color: $dark-gray;
+                        margin-top: 30px;
+                        padding-top: 20px;
                         header {
                             h2 {
                                 color: $dark-purple;
