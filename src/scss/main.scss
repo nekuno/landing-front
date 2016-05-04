@@ -520,6 +520,11 @@ body {
 @media only screen and (min-width: 35em) {
 
 }
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+    body {
+        font-size: 1.1em;
+    }
+}
 
 @media print,
        (-o-min-device-pixel-ratio: 5/4),
