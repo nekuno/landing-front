@@ -425,15 +425,16 @@ body {
                             display: inline-block;
 
                             .section-figure {
-                                margin-bottom: 25px;
+                                margin: 30px auto 25px;
+                                width: 75%;
                                 img {
-                                    width: 80%;
+                                    width: 100%;
                                 }
                             }
                         }
                     }
                     section#discover-the-world {
-                        margin-top: 50px;
+                        margin-top: 30px;
 
                         section {
                             margin-top: 30px;
