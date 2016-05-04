@@ -9,7 +9,11 @@ var minifyCss = require('gulp-minify-css');
 
 // Convert scss to css
 gulp.task('sass', function() {
-    return gulp.src('src/scss/main.scss')
+    var paths = [
+        'src/scss/fonts.scss',
+        'src/scss/main.scss'
+    ];
+    return gulp.src(paths)
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(minifyCss())
         .pipe(concat('main.css'))

@@ -215,6 +215,7 @@ body {
         cursor: pointer;
         display: inline-block;
         font-size: 0.9em;
+        line-height: 1.2em;
         margin: 0 1% 5px 1%;
         padding-top: 2px;
         padding-bottom: 1px;
@@ -281,15 +282,11 @@ body {
         width: 100%;
         z-index: 111;
         #hamburger {
-            background: url('img/hamburger.png') no-repeat;
-            background-size: 85%;
+            color: $dark-purple;
             cursor: pointer;
             float: right;
-            height: 15px;
-            margin-right: 5%;
+            margin-right: 15px;
             margin-top: 35px;
-            width: 20px;
-
         }
     }
 
@@ -319,7 +316,7 @@ body {
             }
         }
         .main-container {
-            padding: 30px 0;
+            padding: 30px 0 0 0;
             .main.wrapper {
                 article {
                     section {
@@ -337,27 +334,15 @@ body {
                             font-size: 0.9em;
 
                             .icon {
-                                display: inline-block;
-                                height: 15px;
                                 margin-left: 15px;
-                                margin-bottom: 2px;
-                                margin-right: 2px;
-                                width: 15px;
-                            }
-                            .apple-store-icon {
-                                background: url('img/icon-apple.png') no-repeat;
-                                background-size: 80%;
-                                margin-bottom: 3px;
-                            }
-                            .google-play-icon {
-                                background: url('img/icon-google-play.png') no-repeat;
-                                background-size: 80%;
-                                margin-top: 5px;
+                                margin-right: 5px;
+                                vertical-align: text-bottom;
                             }
 
                             .description {
                                 display: inline-block;
                                 margin-right: 15px;
+                                vertical-align: middle;
                             }
                         }
                         figure.section-figure {
@@ -500,15 +485,25 @@ body {
         }
         .footer-container {
             footer {
+                font-size: 1.2em;
+                padding: 20px 10% 30px;
+                text-align: left;
                 small {
-
+                    opacity: 0.42;
                 }
                 section {
-                    h3 {
-
+                    h4 {
+                        text-transform: uppercase;
                     }
                     .social-icons {
+                        a {
+                            color: $dark-purple;
+                            margin: 0 20px 0 0;
+                            opacity: 1;
+                            span {
 
+                            }
+                        }
                     }
                 }
             }
