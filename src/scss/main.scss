@@ -222,7 +222,7 @@ body {
     }
 
     .container {
-        background: url('img/background-girl-with-hat-mobile.png') no-repeat;
+        background: url('img/background-girl-with-hat-320.png') no-repeat;
         background-size: 100%;
 
         .transparency-layer {
@@ -288,9 +288,15 @@ body {
 
                     section#for-you {
                         margin-top: 30px;
+
+                        figure#app-overview {
+                            background: url('img/app-overview-320.png') no-repeat;
+                            background-size: 100% auto;
+                            padding-top: 75%;
+                        }
                     }
                     section#amazing {
-                        margin-top: 40px;
+                        //margin-top: -20px;
                     }
                     section#look-like {
                         .slider-transparency-layer {
@@ -454,16 +460,56 @@ body {
 @media only screen and (min-width: 35em) {
 
 }
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-    body {
-        //font-size: 1.1em;
 
+@media only screen and (min-width: 300px) and (max-width: 320px) {
+    body {
         .container {
             .main-container {
                 padding-top: 55px;
             }
         }
     }
+}
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+    body {
+
+        .container {
+            background: url('img/background-girl-with-hat-480.png') no-repeat;
+            background-size: 100%;
+            .main-container {
+                padding-top: 55px;
+
+                .main.wrapper {
+                    article {
+                        section#for-you {
+                            figure#app-overview {
+                                background: url('img/app-overview-480.png') no-repeat;
+                                background-size: 100% auto;
+                                margin-top: 55px;
+                            }
+
+                        }
+                        section#amazing {
+                            //margin-top: -20px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+}
+
+@media only screen and (min-width: 1025px) {
+
 }
 
 @media print,
