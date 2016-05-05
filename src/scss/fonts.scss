@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?v1h110');
-    src:    url('fonts/icomoon.eot?v1h110#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?v1h110') format('truetype'),
-    url('fonts/icomoon.woff?v1h110') format('woff'),
-    url('fonts/icomoon.svg?v1h110#icomoon') format('svg');
+    src:    url('fonts/icomoon.eot?53fqxs');
+    src:    url('fonts/icomoon.eot?53fqxs#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?53fqxs') format('truetype'),
+    url('fonts/icomoon.woff?53fqxs') format('woff'),
+    url('fonts/icomoon.svg?53fqxs#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,6 +24,9 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-nekuno:before {
+    content: "\e900";
+}
 .icon-twitter:before {
     content: "\f099";
     font-size: 1.7em;
