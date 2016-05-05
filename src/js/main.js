@@ -51,4 +51,28 @@
 
     /** End Swipe settings (Mobile slider) **/
 
+    /** Start fixed menu settings (on scroll) **/
+
+    window.setInterval(toggleMenuIfNeeded, 500);
+
+    function toggleMenuIfNeeded() {
+        var isScrolled = $('#menu').hasClass('scrolled');
+        var top = $(window).scrollTop();
+        if (isScrolled && top < 50) {
+            showTopMenu();
+        } else if (!isScrolled && top >= 50) {
+            showScrolledMenu();
+        }
+    }
+
+    function showScrolledMenu() {
+        $('#menu').addClass('scrolled');
+    }
+
+    function showTopMenu() {
+        $('#menu').removeClass('scrolled');
+    }
+
+    /** End fixed menu settings (on scroll) **/
+
 })(jQuery);
