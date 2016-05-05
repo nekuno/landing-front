@@ -472,12 +472,12 @@ body {
 }
 @media only screen and (min-width: 321px) and (max-width: 480px) {
     body {
-
+        font-size: 1em;
         .container {
             background: url('img/background-girl-with-hat-480.png') no-repeat;
-            background-size: 100%;
+            background-size: 450px auto;
             .main-container {
-                padding-top: 55px;
+                padding-top: 75px;
 
                 .main.wrapper {
                     article {
@@ -496,6 +496,14 @@ body {
 
                 }
             }
+        }
+    }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 480px) {
+    body {
+        .container {
+            background-size: 100% auto;
         }
     }
 }
