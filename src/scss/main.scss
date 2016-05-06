@@ -75,374 +75,388 @@ $slider-transparency-layer-top: rgba(99, 65, 177, 0.27);
 
 /******************************* All ******************************************/
 
-body {
-    background: $dark-blue;
-    color: white;
-    font-family: $nekuno-font;
-    font-size: 0.9em;
-    text-align: center;
+html {
+    margin: auto;
+    max-width: 1440px;
 
-    h3, h4 {
-        //letter-spacing: 1px;
-    }
-    a {
+    body {
+        background: $dark-blue;
         color: white;
-        //font-family: $link-font;
-        opacity: 0.5;
-        text-decoration: none;
-
-        &.button {
-            background: $green;
-            border-radius: 17px;
-            font-family: $nekuno-font;
-            font-weight: 700;
-            height: 15px;
-            letter-spacing: 2px;
-            opacity: 1;
-            padding: 10px 25px 9px 25px;
-            text-transform: uppercase;
-        }
-    }
-
-    .border-rounded-button {
-        border: 1px solid $deep-purple;
-        border-radius: 100px;
-        cursor: pointer;
-        display: inline-block;
+        font-family: $nekuno-font;
         font-size: 0.9em;
-        line-height: 1.2em;
-        margin: 0 1% 5px 1%;
-        padding-top: 2px;
-        padding-bottom: 1px;
-        text-align: left;
-    }
+        text-align: center;
 
-    nav#navigation-mobile {
-        background: $dark-purple;
-        float: right;
-        margin-bottom: -100%;
-        max-width: 85%;
-        padding: 74px 0;
-        text-align: left;
-        visibility: hidden;
-        width: 250px;
-        z-index: 11;
-
-        .login-button {
-            margin: 0 auto 89px auto;
-            text-align: center;
+        h3, h4 {
+            //letter-spacing: 1px;
         }
-        .navigation-item {
-            margin-left: 38px;
+        a {
+            color: white;
+            //font-family: $link-font;
+            opacity: 0.5;
+            text-decoration: none;
 
-            h4 {
-                cursor: pointer;
+            &.button {
+                background: $green;
+                border-radius: 17px;
+                font-family: $nekuno-font;
+                font-weight: 700;
+                height: 15px;
+                letter-spacing: 2px;
+                opacity: 1;
+                padding: 10px 25px 9px 25px;
                 text-transform: uppercase;
             }
-            ul.sub-navigation-items {
-                list-style-type: none;
-                -moz-padding-start: 0;
-                -webkit-padding-start: 0;
-                li {
-                    padding-bottom: 10px;
-                    text-decoration: none;
-
-                    a {
-                        .active {
-                            opacity: 1;
-                        }
-                    }
-                }
-            }
         }
 
-        .nav-product, .nav-nekuno, .nav-support {
-            ul.sub-navigation-items {
-                display: none;
-            }
-        }
-        .active {
-            ul.sub-navigation-items {
-                display: block;
-            }
-        }
-    }
-
-    nav#navigation {
-        display: none;
-    }
-
-    section#menu {
-        background-color: transparent;
-        height: 60px;
-        position: fixed;
-        width: 100%;
-        z-index: 111;
-        -webkit-transition: background-color 400ms ease-out;
-        -moz-transition: background-color 400ms ease-out;
-        -o-transition: background-color 400ms ease-out;
-        transition: background-color 400ms ease-out;
-
-        #fixed-nekuno-logo {
-            color: white;
-            opacity: 0;
-            float: left;
-            margin-left: 21px;
-            margin-right: 0;
-            margin-top: 8px;
-            -webkit-transition: opacity 400ms ease-out;
-            -moz-transition: opacity 400ms ease-out;
-            -o-transition: opacity 400ms ease-out;
-            transition: opacity 400ms ease-out;
-
-            .nekuno-text {
-                font-family: $nekuno-logo-font;
-                vertical-align: bottom;
-            }
-        }
-        #hamburger {
-            color: $dark-purple;
+        .border-rounded-button {
+            border: 1px solid $deep-purple;
+            border-radius: 100px;
             cursor: pointer;
-            float: right;
-            margin-right: 21px;
-            margin-top: 35px;
-        }
-
-        &.scrolled {
-            background-color: $dark-purple;
-
-            #hamburger {
-                color: white;
-                margin-top: 18px;
-            }
-            #fixed-nekuno-logo {
-                opacity: 1;
-            }
-        }
-    }
-
-    .container {
-        background: url('img/background-girl-with-hat-320.png') no-repeat;
-        background-size: 100%;
-
-        .transparency-layer {
-            background-image: linear-gradient(to top, transparent 0%, $top-transparency-layer 100%);
-            height: 400px;
-            margin-bottom: -400px;
-            width: 100%;
-        }
-
-        .header-container {
+            display: inline-block;
+            font-size: 0.9em;
+            line-height: 1.2em;
+            margin: 0 1% 5px 1%;
+            padding-top: 1px;
+            padding-bottom: 2px;
             text-align: left;
-            header.title {
-                display: inline-block;
-                padding-left: 29px;
-                padding-top: 30px;
-                width: 85px;
+        }
 
-                img {
-                    float: right;
-                    width: 100%;
+        nav#navigation-mobile {
+            background: $dark-purple;
+            float: right;
+            margin-bottom: -100%;
+            max-width: 85%;
+            padding: 74px 0;
+            text-align: left;
+            visibility: hidden;
+            width: 250px;
+            z-index: 11;
+
+            .login-button {
+                margin: 0 auto 89px auto;
+                text-align: center;
+            }
+            .navigation-item {
+                margin-left: 38px;
+
+                h4 {
+                    cursor: pointer;
+                    text-transform: uppercase;
+                }
+                ul.sub-navigation-items {
+                    list-style-type: none;
+                    -moz-padding-start: 0;
+                    -webkit-padding-start: 0;
+                    li {
+                        padding-bottom: 10px;
+                        text-decoration: none;
+
+                        a {
+                            .active {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .nav-product, .nav-nekuno, .nav-support {
+                ul.sub-navigation-items {
+                    display: none;
+                }
+            }
+            .active {
+                ul.sub-navigation-items {
+                    display: block;
                 }
             }
         }
-        .main-container {
-            padding: 30px 0 0 0;
-            .main.wrapper {
-                article {
-                    section {
-                        h2, h3 {
-                            padding: 0 10%;
-                        }
-                        p {
-                            color: $deep-purple;
-                            font-weight: 500;
-                            line-height: 1.2em;
-                            margin-bottom: 20px;
-                            padding: 0 10%;
-                        }
-                        section.app-store-buttons {
-                            font-size: 0.9em;
 
-                            .icon {
-                                margin-left: 15px;
-                                margin-right: 5px;
-                                vertical-align: text-bottom;
-                            }
+        nav#navigation {
+            display: none;
+        }
 
-                            .description {
-                                display: inline-block;
-                                margin-right: 15px;
-                                vertical-align: middle;
-                            }
-                        }
-                        figure.section-figure {
-                            margin: 35px auto 60px;
-                            width: 100%;
+        section#menu {
+            background-color: transparent;
+            height: 60px;
+            max-width: 1440px;
+            position: fixed;
+            width: 100%;
+            z-index: 111;
+            -webkit-transition: background-color 400ms ease-out;
+            -moz-transition: background-color 400ms ease-out;
+            -o-transition: background-color 400ms ease-out;
+            transition: background-color 400ms ease-out;
 
-                            img {
-                                width: 100%;
-                            }
-                        }
+            #fixed-nekuno-logo {
+                color: white;
+                opacity: 0;
+                float: left;
+                margin-left: 21px;
+                margin-right: 0;
+                margin-top: 8px;
+                -webkit-transition: opacity 400ms ease-out;
+                -moz-transition: opacity 400ms ease-out;
+                -o-transition: opacity 400ms ease-out;
+                transition: opacity 400ms ease-out;
+
+                .nekuno-text {
+                    font-family: $nekuno-logo-font;
+                    vertical-align: bottom;
+                }
+            }
+            #hamburger {
+                color: $dark-purple;
+                cursor: pointer;
+                float: right;
+                margin-right: 21px;
+                margin-top: 35px;
+            }
+
+            &.scrolled {
+                background-color: $dark-purple;
+                font-size: 15px;
+
+                #hamburger {
+                    color: white;
+                    margin-top: 18px;
+                }
+                #fixed-nekuno-logo {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .container {
+            background: url('img/background-girl-with-hat-and-app-overview-320.png') center top no-repeat;
+            background-size: 320px auto;
+
+            .transparency-layer {
+                background-image: linear-gradient(to top, transparent 0%, $top-transparency-layer 100%);
+                height: 400px;
+                margin-bottom: -400px;
+                width: 100%;
+            }
+
+            .header-container {
+                text-align: left;
+                header.title {
+                    display: inline-block;
+                    padding-left: 29px;
+                    padding-top: 30px;
+                    width: 85px;
+
+                    img {
+                        float: right;
+                        width: 100%;
                     }
-
-                    section#for-you {
-                        margin-top: 30px;
-
-                        figure#app-overview {
-                            background: url('img/app-overview-320.png') no-repeat;
-                            background-size: 100% auto;
-                            padding-top: 75%;
-                        }
-                    }
-                    section#amazing {
-                        //margin-top: -20px;
-                    }
-                    section#look-like {
-                        .slider-transparency-layer {
-                            background-image: linear-gradient(180deg, $slider-transparency-layer-bottom 0%, $slider-transparency-layer-top 100%);
-                            height: 500px;
-                            position: absolute;
-                            width: 100%;
-                            z-index: -1;
-                        }
-                        #slider {
-                            img {
-                                width: 75%;
-                            }
-                            h3 {
-                                margin-top: 30px;
+                }
+            }
+            .main-container {
+                padding: 30px 0 0 0;
+                .main.wrapper {
+                    article {
+                        section {
+                            h2, h3 {
+                                padding: 0 10%;
                             }
                             p {
-                                font-size: 0.9em;
-                                margin-bottom: 10px;
+                                color: $deep-purple;
+                                font-weight: 500;
+                                line-height: 1.2em;
+                                margin-bottom: 20px;
+                                padding: 0 10%;
                             }
-                        }
-                        .swipe {
-                            margin-top: -100px;
-                            overflow: hidden;
-                            visibility: hidden;
-                            position: relative;
-                        }
-                        .swipe-wrap {
-                            overflow: hidden;
-                            position: relative;
-                        }
-                        .swipe-wrap > div {
-                            float:left;
-                            width:100%;
-                            position: relative;
-                        }
-                        .slider-dots {
-                            .slider-dot {
-                                background: white;
-                                border-radius: 2.5px;
-                                cursor: pointer;
-                                display: inline-block;
-                                height: 5px;
-                                margin: 2.5px;
-                                width: 5px;
-                                -webkit-border-radius: 2.5px;
-                                -moz-border-radius: 2.5px;
-                                -webkit-transition: width 400ms ease-out;
-                                -moz-transition: width 400ms ease-out;
-                                -o-transition: width 400ms ease-out;
-                                transition: width 400ms ease-out;
-                                z-index: 111;
+                            section.app-store-buttons {
+                                font-size: 0.9em;
 
-                                &.active {
-                                    width: 25px;
+                                .icon {
+                                    line-height: 1.6;
+                                    margin-left: 15px;
+                                    margin-right: 5px;
+                                    vertical-align: bottom;
+                                }
+
+                                .description {
+                                    display: inline-block;
+                                    margin-right: 15px;
+                                    vertical-align: middle;
                                 }
                             }
-                        }
-                    }
-                    section#holy-privacy {
-                        background: $dark-blue;
-                        margin-top: 40px;
-                        padding-top: 30px;
+                            figure.section-figure {
+                                margin: 35px auto 60px;
+                                width: 100%;
 
-                        section {
-                            display: inline-block;
-
-                            .section-figure {
-                                margin: 30px auto 25px;
-                                width: 75%;
                                 img {
                                     width: 100%;
                                 }
                             }
                         }
-                    }
-                    section#discover-the-world {
-                        margin-top: 30px;
 
-                        section {
+                        section#for-you {
+                            height: 500px;
                             margin-top: 30px;
-                        }
-                    }
-                    section#opinions {
 
-                    }
-                    section#blog-posts {
-                        background: white;
-                        color: $dark-gray;
-                        margin-top: 30px;
-                        padding-top: 20px;
-                        header {
-                            h2 {
-                                color: $dark-purple;
-                            }
-                            p {
-                                color: $dark-gray;
+                            figure#app-overview {
+                                background: url('img/app-overview-320.png') no-repeat;
+                                background-size: 100% auto;
+                                padding-top: 75%;
                             }
                         }
-                        article {
-                            header {
-                                figure {
-                                    img {
-
-                                    }
-                                    figcaption {
-
-                                    }
-                                }
-                                time {
-
+                        section#amazing {
+                            //margin-top: -20px;
+                            figure#cards-overview {
+                                background: url('img/cards-overview-320.png') no-repeat;
+                                background-size: 100% auto;
+                                padding-top: 90%;
+                            }
+                        }
+                        section#look-like {
+                            .slider-transparency-layer {
+                                background-image: linear-gradient(180deg, $slider-transparency-layer-bottom 0%, $slider-transparency-layer-top 100%);
+                                height: 500px;
+                                position: absolute;
+                                width: 100%;
+                                z-index: -1;
+                            }
+                            #slider {
+                                img {
+                                    width: 75%;
                                 }
                                 h3 {
-                                    color: $dark-purple;
+                                    margin-top: 30px;
+                                }
+                                p {
+                                    font-size: 0.9em;
+                                    margin-bottom: 10px;
                                 }
                             }
-                            p {
-                                color: $dark-gray;
+                            .swipe {
+                                margin-top: -100px;
+                                overflow: hidden;
+                                visibility: hidden;
+                                position: relative;
                             }
-                            footer {
-                                color: $dark-purple;
+                            .swipe-wrap {
+                                overflow: hidden;
+                                position: relative;
+                            }
+                            .swipe-wrap > div {
+                                float: left;
+                                width: 100%;
+                                position: relative;
+                            }
+                            .slider-dots {
+                                .slider-dot {
+                                    background: white;
+                                    border-radius: 2.5px;
+                                    cursor: pointer;
+                                    display: inline-block;
+                                    height: 5px;
+                                    margin: 2.5px;
+                                    width: 5px;
+                                    -webkit-border-radius: 2.5px;
+                                    -moz-border-radius: 2.5px;
+                                    -webkit-transition: width 400ms ease-out;
+                                    -moz-transition: width 400ms ease-out;
+                                    -o-transition: width 400ms ease-out;
+                                    transition: width 400ms ease-out;
+                                    z-index: 111;
+
+                                    &.active {
+                                        width: 25px;
+                                    }
+                                }
+                            }
+                        }
+                        section#holy-privacy {
+                            background: $dark-blue;
+                            margin-top: 40px;
+                            padding-top: 30px;
+
+                            section {
+                                display: inline-block;
+
+                                .section-figure {
+                                    margin: 30px auto 25px;
+                                    width: 75%;
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                        section#discover-the-world {
+                            margin-top: 30px;
+
+                            section {
+                                margin-top: 30px;
+                            }
+                        }
+                        section#opinions {
+
+                        }
+                        section#blog-posts {
+                            background: white;
+                            color: $dark-gray;
+                            margin-top: 30px;
+                            padding-top: 20px;
+                            header {
+                                h2 {
+                                    color: $dark-purple;
+                                }
+                                p {
+                                    color: $dark-gray;
+                                }
+                            }
+                            article {
+                                header {
+                                    figure {
+                                        img {
+
+                                        }
+                                        figcaption {
+
+                                        }
+                                    }
+                                    time {
+
+                                    }
+                                    h3 {
+                                        color: $dark-purple;
+                                    }
+                                }
+                                p {
+                                    color: $dark-gray;
+                                }
+                                footer {
+                                    color: $dark-purple;
+                                }
                             }
                         }
                     }
                 }
             }
-        }
-        .footer-container {
-            footer {
-                font-size: 1.2em;
-                padding: 20px 10% 30px;
-                text-align: left;
-                small {
-                    opacity: 0.42;
-                }
-                section {
-                    h4 {
-                        text-transform: uppercase;
+            .footer-container {
+                footer {
+                    font-size: 1.2em;
+                    padding: 20px 10% 30px;
+                    text-align: left;
+                    small {
+                        opacity: 0.42;
                     }
-                    .social-icons {
-                        a {
-                            color: $dark-purple;
-                            margin: 0 20px 0 0;
-                            opacity: 1;
-                            span {
+                    section {
+                        h4 {
+                            text-transform: uppercase;
+                        }
+                        .social-icons {
+                            a {
+                                color: $dark-purple;
+                                margin: 0 20px 0 0;
+                                opacity: 1;
+                                span {
 
+                                }
                             }
                         }
                     }
@@ -451,7 +465,6 @@ body {
         }
     }
 }
-
 
 /* ==========================================================================
    Media Queries
@@ -461,8 +474,8 @@ body {
 
 }
 
-@media only screen and (min-width: 300px) and (max-width: 320px) {
-    body {
+@media only screen and (min-width: 300px) {
+    html body {
         .container {
             .main-container {
                 padding-top: 55px;
@@ -470,27 +483,31 @@ body {
         }
     }
 }
+
 @media only screen and (min-width: 321px) and (max-width: 480px) {
-    body {
+    html body {
         font-size: 1em;
         .container {
-            background: url('img/background-girl-with-hat-480.png') no-repeat;
-            background-size: 450px auto;
+            background: url('img/background-girl-with-hat-and-app-overview-480.png') center top no-repeat;
+            background-size: 480px auto;
             .main-container {
-                padding-top: 75px;
+                //padding-top: 100px;
 
                 .main.wrapper {
                     article {
+                        section section.app-store-buttons {
+                            margin-top: 50px;
+                        }
                         section#for-you {
-                            figure#app-overview {
-                                background: url('img/app-overview-480.png') no-repeat;
-                                background-size: 100% auto;
-                                margin-top: 55px;
-                            }
-
+                            height: 690px;
                         }
                         section#amazing {
                             //margin-top: -20px;
+                            figure#cards-overview {
+                                background: url('img/cards-overview-480.png') no-repeat;
+                                background-size: 100% auto;
+                                margin-top: 55px;
+                            }
                         }
                     }
 
@@ -500,24 +517,113 @@ body {
     }
 }
 
-@media only screen and (min-width: 450px) and (max-width: 480px) {
-    body {
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    html body {
+        font-size: 1.1em;
         .container {
-            background-size: 100% auto;
+            background: url('img/background-girl-with-hat-and-app-overview-768.png') center top no-repeat;
+            background-size: 768px auto;
+            .main-container {
+                //padding-top: 75px;
+
+                .main.wrapper {
+                    article {
+                        section section.app-store-buttons {
+                            margin-top: 30px;
+                        }
+                        section#for-you {
+                            height: 790px;
+                        }
+                        section#amazing {
+                            figure#cards-overview {
+                                background: url('img/cards-overview-768.png') no-repeat;
+                                background-size: 100% auto;
+                                margin-top: 55px;
+                                padding-top: 65%;
+                            }
+                        }
+                    }
+
+                }
+            }
         }
     }
 }
 
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-
-}
-
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    html body {
+        font-size: 1.2em;
+        .container {
+            background: url('img/background-girl-with-hat-and-app-overview-1024.png') center top no-repeat;
+            background-size: 1024px auto;
+            .main-container {
+                padding-top: 150px;
 
+                .main.wrapper {
+                    article {
+                        section section.app-store-buttons {
+                            margin-top: 50px;
+                        }
+                        section#for-you {
+                            height: 1020px;
+                        }
+                        section#amazing {
+                            figure#cards-overview {
+                                background: url('img/cards-overview-1440.png') no-repeat;
+                                background-size: 100% auto;
+                                margin-top: 55px;
+                                padding-top: 40%;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        .border-rounded-button {
+            padding: 6px 20px;
+        }
+    }
 }
 
 @media only screen and (min-width: 1025px) {
+    html body {
+        font-size: 1.3em;
+        .container {
+            background: url('img/background-girl-with-hat-and-app-overview-1440.png') center top no-repeat;
+            background-size: 1440px auto;
+            .main-container {
+                padding-top: 200px;
 
+                .main.wrapper {
+                    article {
+                        section section.app-store-buttons {
+                            margin-top: 50px;
+                        }
+                        section#for-you {
+                            height: 1000px;
+                        }
+                        section#amazing {
+                            figure#cards-overview {
+                                background: url('img/cards-overview-1440.png') no-repeat;
+                                background-size: 100% auto;
+                                margin-top: 55px;
+                                padding-top: 40%;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        .border-rounded-button {
+            padding: 6px 20px;
+            .icon {
+                padding-right: 10px;
+            }
+        }
+    }
 }
 
 @media print,
