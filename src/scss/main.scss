@@ -313,6 +313,7 @@ html {
                             .slider-transparency-layer {
                                 background-image: linear-gradient(180deg, $slider-transparency-layer-bottom 0%, $slider-transparency-layer-top 100%);
                                 height: 500px;
+                                max-width: 1440px;
                                 position: absolute;
                                 width: 100%;
                                 z-index: -1;
