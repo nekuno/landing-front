@@ -116,8 +116,7 @@ html {
             font-size: 0.9em;
             line-height: 1.2em;
             margin: 0 1% 5px 1%;
-            padding-top: 1px;
-            padding-bottom: 2px;
+            padding: 2px 0 4px;
             text-align: left;
         }
 
@@ -272,8 +271,7 @@ html {
 
                                 .icon {
                                     line-height: 1.6;
-                                    margin-left: 15px;
-                                    margin-right: 5px;
+                                    margin: 0 5px 0 15px;
                                     vertical-align: bottom;
                                 }
 
@@ -583,6 +581,9 @@ html {
         }
         .border-rounded-button {
             padding: 6px 20px;
+            .icon {
+                padding-right: 7px;
+            }
         }
     }
 }
