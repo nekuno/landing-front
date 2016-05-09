@@ -394,6 +394,7 @@ html {
                             }
                         }
                         section#discover-the-world {
+                            margin-bottom: 40px;
                             margin-top: 30px;
 
                             section {
@@ -465,6 +466,13 @@ html {
 
                                 }
                             }
+                            .footer-social-network-text {
+                                display: none;
+                            }
+                        }
+
+                        &#footer-navigation {
+                            display: none;
                         }
                     }
                 }
@@ -717,6 +725,81 @@ html {
                         }
                     }
 
+                }
+            }
+            .footer-container {
+                footer {
+                    font-size: 0.7em;
+                    padding: 75px 0;
+                    text-align: center;
+                    small {
+                        font-size: 0.9em;
+                        opacity: 0.42;
+                    }
+                    section {
+                        display: inline-block;
+                        padding: 0 5%;
+                        text-align: left;
+                        vertical-align: text-top;
+                        h4 {
+                            margin-bottom: 10px;
+                        }
+
+                        &#footer-copyright {
+                            figure.logo-nekuno {
+                                background: url('../img/logo.png') left top no-repeat;
+                                background-size: 155px auto;
+                                height: 82px;
+                                margin: 15px auto;
+                            }
+                        }
+                        &#footer-navigation {
+                            border-left: solid 1px $dark-gray;
+                            border-right: solid 1px $dark-gray;
+                            display: inline-block;
+                            min-width: 500px;
+                            padding: 0;
+                            text-align: center;
+
+                            .footer-sub-navigation-items {
+                                display: inline-block;
+                                padding: 0 10px;
+
+                                ul {
+                                    display: inline-block;
+                                    font-size: 0.9em;
+                                    list-style-type: none;
+                                    margin: 0;
+                                    -moz-padding-start: 0;
+                                    -webkit-padding-start: 0;
+
+                                    li {
+                                        padding: 10px 0;
+                                    }
+                                }
+
+                            }
+                        }
+                        &#footer-social-networks {
+                            a {
+                                padding: 10px 0;
+                            }
+                            .social-icons {
+                                a {
+                                    display: block;
+                                    font-size: 0.7em;
+                                }
+                                .footer-social-network-text {
+                                    color: white;
+                                    display: inline;
+                                    font-size: 1.2em;
+                                    opacity: 0.42;
+                                    padding-left: 10px;
+                                    vertical-align: top;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
