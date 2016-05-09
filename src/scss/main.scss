@@ -325,7 +325,8 @@ html {
                             }
                             #slider {
                                 img {
-                                    width: 75%;
+                                    max-width: 244px;
+                                    width: 100%;
                                 }
                                 h3 {
                                     margin-top: 30px;
@@ -346,6 +347,7 @@ html {
                                 position: relative;
                             }
                             .swipe-wrap > div {
+                                display: block;
                                 float: left;
                                 width: 100%;
                                 position: relative;
@@ -385,6 +387,7 @@ html {
                                     margin: 30px auto 25px;
                                     width: 75%;
                                     img {
+                                        max-width: 247px;
                                         width: 100%;
                                     }
                                 }
@@ -557,6 +560,13 @@ html {
                                 margin: 0 auto 0 -5%;
                             }
                         }
+                        section#holy-privacy {
+                            padding-top: 75px;
+                        }
+                        section#discover-the-world {
+                            margin-bottom: 50px;
+                            padding-top: 50px;
+                        }
                     }
 
                 }
@@ -595,6 +605,23 @@ html {
                                 margin: 0 auto;
                             }
                         }
+                        section#holy-privacy {
+                            padding-top: 100px;
+                            section {
+                                width: 40%;
+
+                                h3 {
+                                    font-size: 0.8em;
+                                }
+                                p {
+                                    font-size: 0.7em;
+                                }
+                            }
+                        }
+                        section#discover-the-world {
+                            margin-bottom: 75px;
+                            padding-top: 75px;
+                        }
                     }
 
                 }
@@ -620,6 +647,10 @@ html {
 
                 .main.wrapper {
                     article {
+                        h2 {
+                            font-size: 1.6em;
+                        }
+
                         section section.app-store-buttons {
                             margin-top: 50px;
                         }
@@ -638,6 +669,51 @@ html {
                             figure#users-overview {
                                 margin: 0 auto;
                             }
+
+                            #slider {
+                                h3 {
+                                    font-size: 0.7em;
+                                    margin: 30px 0 2%;
+                                    max-width: 300px;
+                                    padding: 0;
+                                }
+                                p {
+                                    font-size: 0.6em;
+                                    margin: 5px 2% 30px 2%;
+                                    max-width: 300px;
+                                    padding: 0;
+                                }
+                            }
+                            .swipe {
+                                visibility: visible;
+                            }
+
+                            .swipe-wrap > div {
+                                display: inline-block;
+                                float: none;
+                                vertical-align: text-top;
+                                width: 30%;
+                            }
+                            .slider-dots {
+                                display: none;
+                            }
+                        }
+                        section#holy-privacy {
+                            padding-top: 100px;
+                            section {
+                                width: 40%;
+
+                                h3 {
+                                    font-size: 0.8em;
+                                }
+                                p {
+                                    font-size: 0.7em;
+                                }
+                            }
+                        }
+                        section#discover-the-world {
+                            margin-bottom: 150px;
+                            padding-top: 100px;
                         }
                     }
 

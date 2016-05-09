@@ -1,5 +1,7 @@
 (function($) {
 
+    var widthThreshold = 1025;
+
     /** Start sliiide settings (Mobile navigation) **/
     var settings = {
         toggle: "#hamburger", // the selector for the menu toggle, whatever clickable element you want to activate or deactivate the menu. A click listener will be added to this element.
@@ -25,19 +27,36 @@
     /** End sliiide settings (Mobile navigation) **/
 
     /** Start Swipe settings (Mobile slider) **/
-    window.mySwipe = new Swipe(document.getElementById('slider'), {
-        startSlide: 0,
-        speed: 400,
-        auto: 3000,
-        continuous: true,
-        disableScroll: false,
-        stopPropagation: false,
-        callback: changeActiveDot
-        //transitionEnd: changeActiveDot
-    });
 
-    $('.slider-dots .slider-dot').on('click', goToSlide)
+    initSwipeIfSmallScreen();
+    $(window).on('resize', initSwipeIfSmallScreen);
+    
+    var timeout = null;
+    function initSwipeIfSmallScreen() {
+        if (timeout) {
+            window.clearTimeout(timeout);
+        }
+        timeout = window.setTimeout(function () {
+            if ($(window).width() < widthThreshold && !window.mySwipe) {
+                window.mySwipe = new Swipe(document.getElementById('slider'), {
+                    startSlide: 0,
+                    speed: 400,
+                    auto: 3000,
+                    continuous: true,
+                    disableScroll: false,
+                    stopPropagation: false,
+                    callback: changeActiveDot
+                });
 
+                $('.slider-dots .slider-dot').on('click', goToSlide)
+
+            } else if ($(window).width() >= widthThreshold && window.mySwipe) {
+                window.mySwipe.kill();
+                window.mySwipe = null;
+                $('.slider-dots .slider-dot').off('click')
+            }
+        }, 500);
+    }
     function changeActiveDot(index) {
         var sliderDotsElems = $('.slider-dots .slider-dot');
         sliderDotsElems.closest('.active').removeClass('active');
@@ -48,12 +67,14 @@
         var index = $(e.target).data('index');
         window.mySwipe.slide(index);
     }
-
+    
     /** End Swipe settings (Mobile slider) **/
 
     /** Start fixed menu settings (on scroll) **/
 
-    window.setInterval(toggleMenuIfNeeded, 500);
+    if ($(window).width() < widthThreshold) {
+        window.setInterval(toggleMenuIfNeeded, 500);
+    }
 
     function toggleMenuIfNeeded() {
         var isScrolled = $('#menu').hasClass('scrolled');
