@@ -30,7 +30,7 @@
 
     initSwipeIfSmallScreen();
     $(window).on('resize', initSwipeIfSmallScreen);
-    
+
     var timeout = null;
     function initSwipeIfSmallScreen() {
         if (timeout) {
@@ -67,21 +67,20 @@
         var index = $(e.target).data('index');
         window.mySwipe.slide(index);
     }
-    
+
     /** End Swipe settings (Mobile slider) **/
 
     /** Start fixed menu settings (on scroll) **/
 
-    if ($(window).width() < widthThreshold) {
-        window.setInterval(toggleMenuIfNeeded, 500);
-    }
+    window.setInterval(toggleMenuIfNeeded, 500);
 
     function toggleMenuIfNeeded() {
+        var hasSmallScreen = $(window).width() < widthThreshold;
         var isScrolled = $('#menu').hasClass('scrolled');
         var top = $(window).scrollTop();
-        if (isScrolled && top < 50) {
+        if (!hasSmallScreen && isScrolled || isScrolled && top < 50) {
             showTopMenu();
-        } else if (!isScrolled && top >= 50) {
+        } else if (hasSmallScreen && !isScrolled && top >= 50) {
             showScrolledMenu();
         }
     }

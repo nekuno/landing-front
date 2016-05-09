@@ -120,6 +120,12 @@ html {
             text-align: left;
         }
 
+        .login-button {
+            font-size: 0.7em;
+            margin: 0 auto 89px auto;
+            text-align: center;
+        }
+
         nav#navigation-mobile {
             background: $dark-purple;
             float: right;
@@ -131,10 +137,6 @@ html {
             width: 250px;
             z-index: 11;
 
-            .login-button {
-                margin: 0 auto 89px auto;
-                text-align: center;
-            }
             .navigation-item {
                 margin-left: 38px;
 
@@ -169,10 +171,6 @@ html {
                     display: block;
                 }
             }
-        }
-
-        nav#navigation {
-            display: none;
         }
 
         section#menu {
@@ -249,6 +247,9 @@ html {
                         float: right;
                         width: 100%;
                     }
+                }
+                nav#navigation {
+                    display: none;
                 }
             }
             .main-container {
@@ -589,6 +590,12 @@ html {
         .container {
             background: url('img/background-girl-with-hat-and-app-overview-1024.png') center top no-repeat;
             background-size: 1024px auto;
+            .header-container {
+                header.title {
+                    padding-left: 50px;
+                    width: 155px;
+                }
+            }
             .main-container {
                 padding-top: 150px;
 
@@ -647,9 +654,45 @@ html {
 @media only screen and (min-width: 1025px) {
     html body {
         font-size: 1.3em;
+
+        section#menu {
+            #hamburger {
+                display: none;
+            }
+        }
         .container {
             background: url('img/background-girl-with-hat-and-app-overview-1440.png') center top no-repeat;
             background-size: 1440px auto;
+
+            .header-container {
+                margin-top: 30px;
+                header.title {
+                    padding-left: 50px;
+                    width: 155px;
+                }
+
+                nav#navigation {
+                    display: inline-block;
+                    float: right;
+                    font-family: $link-font;
+                    font-size: 0.8em;
+                    margin-right: 3%;
+                    margin-top: 75px;
+                    ul {
+                        list-style-type: none;
+                        margin: 0;
+                        -moz-padding-start: 0;
+                        -webkit-padding-start: 0;
+                        li {
+                            display: inline-block;
+                            padding: 15px;
+                            a {
+
+                            }
+                        }
+                    }
+                }
+            }
             .main-container {
                 padding-top: 200px;
 
@@ -807,6 +850,18 @@ html {
             padding: 6px 20px;
             .icon {
                 padding-right: 10px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    html body {
+        .container {
+            .header-container {
+                header.title {
+                    padding-left: 100px;
+                }
             }
         }
     }
