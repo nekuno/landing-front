@@ -310,6 +310,7 @@ html {
                             }
                         }
                         section#look-like {
+                            overflow-x: hidden;
                             .slider-transparency-layer {
                                 background-image: linear-gradient(180deg, $slider-transparency-layer-bottom 0%, $slider-transparency-layer-top 100%);
                                 height: 500px;
@@ -317,6 +318,10 @@ html {
                                 position: absolute;
                                 width: 100%;
                                 z-index: -1;
+                            }
+                            figure#users-overview {
+                                margin: -100px auto 0 -20%;
+                                width: 874px;
                             }
                             #slider {
                                 img {
@@ -508,6 +513,11 @@ html {
                                 margin-top: 55px;
                             }
                         }
+                        section#look-like {
+                            figure#users-overview {
+                                margin: -75px auto 0 -10%;
+                            }
+                        }
                     }
 
                 }
@@ -542,6 +552,11 @@ html {
                                 padding-top: 65%;
                             }
                         }
+                        section#look-like {
+                            figure#users-overview {
+                                margin: 0 auto 0 -5%;
+                            }
+                        }
                     }
 
                 }
@@ -573,6 +588,11 @@ html {
                                 background-size: 100% auto;
                                 margin-top: 55px;
                                 padding-top: 40%;
+                            }
+                        }
+                        section#look-like {
+                            figure#users-overview {
+                                margin: 0 auto;
                             }
                         }
                     }
@@ -612,6 +632,11 @@ html {
                                 background-size: 100% auto;
                                 margin-top: 55px;
                                 padding-top: 40%;
+                            }
+                        }
+                        section#look-like {
+                            figure#users-overview {
+                                margin: 0 auto;
                             }
                         }
                     }
