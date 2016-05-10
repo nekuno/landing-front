@@ -56,21 +56,10 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-/****************************** Fonts *****************************************/
 
+@import '_partials/colors';
 @import '_partials/fonts';
-
-
-/****************************** Colors ****************************************/
-
-$dark-blue: #141134;
-$deep-purple: #9f82e3;
-$dark-purple: #6342b1;;
-$dark-gray: #424753;
-$green: #69d6b8;
-$top-transparency-layer: #151132;
-$slider-transparency-layer-bottom: #141134;
-$slider-transparency-layer-top: rgba(99, 65, 177, 0.27);
+@import '_partials/section-scroll';
 
 
 /******************************* All ******************************************/
@@ -118,6 +107,10 @@ html {
             margin: 0 1% 5px 1%;
             padding: 2px 0 4px;
             text-align: left;
+        }
+
+        .bullets-container {
+            display: none;
         }
 
         .login-button {
@@ -256,7 +249,7 @@ html {
                 padding: 30px 0 0 0;
                 .main.wrapper {
                     article {
-                        section {
+                        section, .scrollable-section {
                             h2, h3 {
                                 padding: 0 10%;
                             }
@@ -292,7 +285,7 @@ html {
                             }
                         }
 
-                        section#for-you {
+                        .for-you {
                             height: 500px;
                             margin-top: 30px;
 
@@ -302,7 +295,7 @@ html {
                                 padding-top: 75%;
                             }
                         }
-                        section#amazing {
+                        .amazing {
                             //margin-top: -20px;
                             figure#cards-overview {
                                 background: url('img/cards-overview-320.png') no-repeat;
@@ -310,7 +303,7 @@ html {
                                 padding-top: 90%;
                             }
                         }
-                        section#look-like {
+                        .look-like {
                             overflow-x: hidden;
                             .slider-transparency-layer {
                                 background-image: linear-gradient(180deg, $slider-transparency-layer-bottom 0%, $slider-transparency-layer-top 100%);
@@ -376,7 +369,7 @@ html {
                                 }
                             }
                         }
-                        section#holy-privacy {
+                        .holy-privacy {
                             background: $dark-blue;
                             margin-top: 40px;
                             padding-top: 30px;
@@ -512,13 +505,13 @@ html {
 
                 .main.wrapper {
                     article {
-                        section section.app-store-buttons {
+                        .scrollable-section section.app-store-buttons {
                             margin-top: 50px;
                         }
-                        section#for-you {
+                        .for-you {
                             height: 690px;
                         }
-                        section#amazing {
+                        .amazing {
                             //margin-top: -20px;
                             figure#cards-overview {
                                 background: url('img/cards-overview-480.png') no-repeat;
@@ -526,7 +519,7 @@ html {
                                 margin-top: 55px;
                             }
                         }
-                        section#look-like {
+                        .look-like {
                             figure#users-overview {
                                 margin: -75px auto 0 -10%;
                             }
@@ -556,13 +549,13 @@ html {
 
                 .main.wrapper {
                     article {
-                        section section.app-store-buttons {
+                        .scrollable-section section.app-store-buttons {
                             margin-top: 30px;
                         }
-                        section#for-you {
+                        .for-you {
                             height: 790px;
                         }
-                        section#amazing {
+                        .amazing {
                             figure#cards-overview {
                                 background: url('img/cards-overview-768.png') no-repeat;
                                 background-size: 100% auto;
@@ -570,12 +563,12 @@ html {
                                 padding-top: 65%;
                             }
                         }
-                        section#look-like {
+                        .look-like {
                             figure#users-overview {
                                 margin: 0 auto 0 -5%;
                             }
                         }
-                        section#holy-privacy {
+                        .holy-privacy {
                             padding-top: 75px;
                         }
                         section#discover-the-world {
@@ -613,13 +606,13 @@ html {
 
                 .main.wrapper {
                     article {
-                        section section.app-store-buttons {
+                        .scrollable-section section.app-store-buttons {
                             margin-top: 50px;
                         }
-                        section#for-you {
+                        .for-you {
                             height: 1020px;
                         }
-                        section#amazing {
+                        .amazing {
                             figure#cards-overview {
                                 background: url('img/cards-overview-1440.png') no-repeat;
                                 background-size: 100% auto;
@@ -627,12 +620,12 @@ html {
                                 padding-top: 40%;
                             }
                         }
-                        section#look-like {
+                        .look-like {
                             figure#users-overview {
                                 margin: 0 auto;
                             }
                         }
-                        section#holy-privacy {
+                        .holy-privacy {
                             padding-top: 100px;
                             section {
                                 width: 40%;
@@ -714,7 +707,7 @@ html {
                             font-size: 1.6em;
                         }
 
-                        section {
+                        .scrollable-section, section {
                             h2, h3 {
                                 padding: 0 25%;
                             }
@@ -725,10 +718,10 @@ html {
                                 margin-top: 50px;
                             }
                         }
-                        section#for-you {
+                        .for-you {
                             height: 1000px;
                         }
-                        section#amazing {
+                        .amazing {
                             figure#cards-overview {
                                 background: url('img/cards-overview-1440.png') no-repeat;
                                 background-size: 100% auto;
@@ -736,7 +729,7 @@ html {
                                 padding-top: 40%;
                             }
                         }
-                        section#look-like {
+                        .look-like {
                             figure#users-overview {
                                 margin: 0 auto;
                             }
@@ -769,7 +762,7 @@ html {
                                 display: none;
                             }
                         }
-                        section#holy-privacy {
+                        .holy-privacy {
                             padding-top: 100px;
                             section {
                                 width: 40%;
@@ -875,6 +868,9 @@ html {
             .icon {
                 padding-right: 10px;
             }
+        }
+        .bullets-container {
+            display: table;
         }
     }
 }

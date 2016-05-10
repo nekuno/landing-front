@@ -27,7 +27,6 @@
     /** End sliiide settings (Mobile navigation) **/
 
     /** Start Swipe settings (Mobile slider) **/
-
     initSwipeIfSmallScreen();
     $(window).on('resize', initSwipeIfSmallScreen);
 
@@ -70,8 +69,7 @@
 
     /** End Swipe settings (Mobile slider) **/
 
-    /** Start fixed menu settings (on scroll) **/
-
+    /** Start fixed menu settings **/
     window.setInterval(toggleMenuIfNeeded, 500);
 
     function toggleMenuIfNeeded() {
@@ -93,6 +91,19 @@
         $('#menu').removeClass('scrolled');
     }
 
-    /** End fixed menu settings (on scroll) **/
+    /** End fixed menu settings **/
 
+    /** Start section scroll settings **/
+    var sectionScrollActive = false;
+    initSectionScrollIfLargeScreen();
+    $(window).on('resize', initSectionScrollIfLargeScreen);
+
+    function initSectionScrollIfLargeScreen() {
+        if (!sectionScrollActive && $(window).width() >= widthThreshold) {
+            $('body').sectionScroll();
+            sectionScrollActive = true;
+        }
+    }
+
+    /** End fixed menu settings (on scroll) **/
 })(jQuery);
