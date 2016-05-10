@@ -463,13 +463,14 @@ html {
                                 color: $dark-purple;
                                 margin: 0 20px 0 0;
                                 opacity: 1;
-                                span {
-
+                                .icon {
+                                    display: inline-block;
+                                }
+                                .footer-social-network-text {
+                                    display: none;
                                 }
                             }
-                            .footer-social-network-text {
-                                display: none;
-                            }
+
                         }
 
                         &#footer-navigation {
@@ -542,6 +543,11 @@ html {
 @media only screen and (min-width: 481px) and (max-width: 768px) {
     html body {
         font-size: 1.1em;
+        nav#navigation-mobile {
+            .navigation-item {
+                font-size: 0.9em;
+            }
+        }
         .container {
             background: url('img/background-girl-with-hat-and-app-overview-768.png') center top no-repeat;
             background-size: 768px auto;
@@ -587,6 +593,12 @@ html {
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     html body {
         font-size: 1.2em;
+
+        nav#navigation-mobile {
+            .navigation-item {
+                font-size: 0.9em;
+            }
+        }
         .container {
             background: url('img/background-girl-with-hat-and-app-overview-1024.png') center top no-repeat;
             background-size: 1024px auto;
@@ -702,8 +714,16 @@ html {
                             font-size: 1.6em;
                         }
 
-                        section section.app-store-buttons {
-                            margin-top: 50px;
+                        section {
+                            h2, h3 {
+                                padding: 0 25%;
+                            }
+                            p {
+                                padding: 0 20%;
+                            }
+                            section.app-store-buttons {
+                                margin-top: 50px;
+                            }
                         }
                         section#for-you {
                             height: 1000px;
@@ -831,14 +851,18 @@ html {
                                 a {
                                     display: block;
                                     font-size: 0.7em;
-                                }
-                                .footer-social-network-text {
-                                    color: white;
-                                    display: inline;
-                                    font-size: 1.2em;
-                                    opacity: 0.42;
-                                    padding-left: 10px;
-                                    vertical-align: top;
+
+                                    .icon {
+                                        width: 15px;
+                                    }
+                                    .footer-social-network-text {
+                                        color: white;
+                                        display: inline;
+                                        font-size: 1.2em;
+                                        opacity: 0.42;
+                                        padding-left: 10px;
+                                        vertical-align: top;
+                                    }
                                 }
                             }
                         }
