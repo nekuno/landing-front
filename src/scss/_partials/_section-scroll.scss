@@ -65,6 +65,11 @@
                     z-index: -1;
                     width: 2px;
                 }
+                @-moz-document url-prefix() {
+                    &:before {
+                        margin-left: 2px;
+                    }
+                }
             }
             &:nth-child(1) {
                 a {
