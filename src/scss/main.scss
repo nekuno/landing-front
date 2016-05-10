@@ -288,15 +288,8 @@ html {
                         .for-you {
                             height: 500px;
                             margin-top: 30px;
-
-                            figure#app-overview {
-                                background: url('img/app-overview-320.png') no-repeat;
-                                background-size: 100% auto;
-                                padding-top: 75%;
-                            }
                         }
                         .amazing {
-                            //margin-top: -20px;
                             figure#cards-overview {
                                 background: url('img/cards-overview-320.png') no-repeat;
                                 background-size: 100% auto;
@@ -399,10 +392,10 @@ html {
 
                         }
                         section#blog-posts {
-                            background: white;
+                            background: $blog-section-background;
                             color: $dark-gray;
-                            margin-top: 30px;
-                            padding-top: 20px;
+                            margin-top: 40px;
+                            padding: 40px 0;
                             header {
                                 h2 {
                                     color: $dark-purple;
@@ -412,27 +405,57 @@ html {
                                 }
                             }
                             article {
+                                background: white;
+                                border: 1px solid $blog-section-border;
+                                border-radius: 10px;
+                                cursor: pointer;
+                                margin: 10px;
+                                text-align: left;
                                 header {
                                     figure {
+                                        margin: 0;
+                                        text-align: center;
                                         img {
-
+                                            margin: auto;
+                                            max-width: 100%;
+                                            width: auto;
                                         }
                                         figcaption {
-
+                                            background: $dark-purple;
+                                            border-radius: 12px;
+                                            color: white;
+                                            font-size: 0.8em;
+                                            font-weight: bold;
+                                            margin-left: 20px;
+                                            margin-top: 30px;
+                                            padding: 3px 10px;
+                                            position: absolute;
+                                            text-transform: uppercase;
                                         }
                                     }
                                     time {
-
+                                        display: block;
+                                        font-size: 0.9em;
+                                        margin-top: 30px;
+                                        opacity: 0.5;
+                                        padding: 0 20px;
                                     }
                                     h3 {
                                         color: $dark-purple;
+                                        margin: 15px 0 0;
+                                        padding: 0 20px;
                                     }
                                 }
                                 p {
                                     color: $dark-gray;
+                                    font-size: 0.9em;
+                                    margin: 7px 0;
+                                    padding: 0 20px;
                                 }
                                 footer {
                                     color: $dark-purple;
+                                    font-size: 0.9em;
+                                    padding: 10px 20px 20px;
                                 }
                             }
                         }
@@ -779,8 +802,22 @@ html {
                             margin-bottom: 150px;
                             padding-top: 100px;
                         }
+                        section#blog-posts {
+                            header {
+                                h2 {
+                                    font-size: 2em;
+                                }
+                                p {
+                                }
+                            }
+                            article {
+                                display: inline-block;
+                                font-size: 0.7em;
+                                vertical-align: text-top;
+                                width: 300px;
+                            }
+                        }
                     }
-
                 }
             }
             .footer-container {
