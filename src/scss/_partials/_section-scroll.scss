@@ -28,7 +28,11 @@
                     background-color: transparent;
                 }
                 &:after {
-                    background: $dark-gray;
+                    background-color: $dark-gray;
+                    -webkit-transition: background-color 400ms ease-out;
+                    -moz-transition: background-color 400ms ease-out;
+                    -o-transition: background-color 400ms ease-out;
+                    transition: background-color 400ms ease-out;
                     border: 2px solid white;
                     height: 12px;
                     margin-right: -20px;
@@ -42,7 +46,11 @@
                 a {
                     opacity: 1;
                     &:after {
-                        background: $green;
+                        background-color: $green;
+                        -webkit-transition: background-color 400ms ease-out;
+                        -moz-transition: background-color 400ms ease-out;
+                        -o-transition: background-color 400ms ease-out;
+                        transition: background-color 400ms ease-out;
                     }
                 }
 
