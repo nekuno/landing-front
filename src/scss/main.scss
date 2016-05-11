@@ -170,7 +170,7 @@ html {
             background-color: transparent;
             height: 60px;
             max-width: 1440px;
-            position: fixed;
+            position: absolute;
             top: 0;
             width: 100%;
             z-index: 111;
@@ -211,6 +211,7 @@ html {
             &.scrolled {
                 background-color: $dark-purple;
                 font-size: 15px;
+                position: fixed;
 
                 #hamburger {
                     color: white;

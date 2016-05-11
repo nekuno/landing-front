@@ -98,16 +98,17 @@
     $(window).on('resize', initSectionScrollIfLargeScreen);
 
     function initSectionScrollIfLargeScreen() {
-        if (!sectionScrollActive && $(window).width() >= widthThreshold) {
-            $('body').sectionScroll();
+        var existsContentScrollable = $('.scrollable-section').length;
+        if (existsContentScrollable && $(window).width() >= widthThreshold) {
             sectionScrollActive = true;
+            $('body .container').sectionScroll();
         }
     }
 
     /** End fixed menu settings (on scroll) **/
 
     /** Start RSS settings **/
-    /*var feed = "http://blog.nekuno.com/feed";
+    var feed = "http://brain.pre.nekuno.com/client/blog-feed";
 
     $.ajax(feed, {
         accepts:{
@@ -115,17 +116,24 @@
         },
         dataType:"xml",
         success:function(data) {
-            //Credit: http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
-
-            $(data).find("item").each(function () { // or "item" or whatever suits your feed
+            var articles = $("#blog-posts").find('article');
+            $(data).find("item").each(function (index) { // or "item" or whatever suits your feed
+                if (index > 2) {
+                    return false;
+                }
                 var el = $(this);
-                console.log("------------------------");
-                console.log("title      : " + el.find("title").text());
-                console.log("link       : " + el.find("link").text());
-                console.log("description: " + el.find("description").text());
+
+                articles.eq(index).attr('onclick', 'window.location = "' + el.find("link").text() + '"');
+                articles.eq(index).find('header h3').html(el.find("title").text());
+                articles.eq(index).find('time').html(el.find("pubDate").text());
+                articles.eq(index).find('p').html(el.find("description").text());
+                articles.eq(index).find('.comments-number').html(el.find("slash:comments").text() || 0);
             });
-
-
+        },
+        error: function (jqXHR, status, error) {
+            // For debug purposes
+            //console.log(status);
+            //console.log(error);
         }
-    });*/
+    });
 })(jQuery);
