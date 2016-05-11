@@ -73,12 +73,11 @@
     window.setInterval(toggleMenuIfNeeded, 500);
 
     function toggleMenuIfNeeded() {
-        var hasSmallScreen = $(window).width() < widthThreshold;
         var isScrolled = $('#menu').hasClass('scrolled');
         var top = $(window).scrollTop();
-        if (!hasSmallScreen && isScrolled || isScrolled && top < 50) {
+        if (isScrolled && top < 50) {
             showTopMenu();
-        } else if (hasSmallScreen && !isScrolled && top >= 50) {
+        } else if (!isScrolled && top >= 50) {
             showScrolledMenu();
         }
     }
@@ -108,7 +107,7 @@
     /** End fixed menu settings (on scroll) **/
 
     /** Start RSS settings **/
-    var feed = "http://blog.nekuno.com/feed";
+    /*var feed = "http://blog.nekuno.com/feed";
 
     $.ajax(feed, {
         accepts:{
@@ -128,5 +127,5 @@
 
 
         }
-    });
+    });*/
 })(jQuery);

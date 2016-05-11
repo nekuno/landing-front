@@ -171,6 +171,7 @@ html {
             height: 60px;
             max-width: 1440px;
             position: fixed;
+            top: 0;
             width: 100%;
             z-index: 111;
             -webkit-transition: background-color 400ms ease-out;
@@ -182,6 +183,7 @@ html {
                 color: white;
                 opacity: 0;
                 float: left;
+                font-size: 15px;
                 margin-left: 21px;
                 margin-right: 0;
                 margin-top: 8px;
@@ -194,6 +196,9 @@ html {
                     font-family: $nekuno-logo-font;
                     vertical-align: bottom;
                 }
+            }
+            #fixed-web-navigation {
+                display: none;
             }
             #hamburger {
                 color: $dark-purple;
@@ -499,6 +504,70 @@ html {
     }
 }
 
+/**************************** not landing page *******************************/
+
+html {
+    body {
+        .container.not-landing-page-container {
+            background: white;
+            .header-container {
+                background: $dark-blue;
+                padding-bottom: 15px;
+            }
+            .main-container {
+                padding-top: 0;
+                .main.wrapper {
+                    article {
+                        margin-bottom: 50px;
+                        section {
+                            margin-top: 30px;
+                            text-align: left;
+                            h2 {
+                                color: $dark-purple;
+                                display: inline-block;
+                                font-size: 1.5em;
+                                padding: 0 10%;
+                                width: 100%;
+                            }
+                            p {
+                                color: $dark-gray;
+                                font-size: 0.8em;
+                                padding: 0 10%;
+                            }
+                            .green-dot {
+                                background: $green;
+                                -webkit-border-radius: 50%;
+                                -moz-border-radius: 50%;
+                                border-radius: 50%;
+                                display: inline-block;
+                                height: 10px;
+                                margin: 14px 10px 0 10%;
+                                /*margin-right: 10px;
+                                margin-left: 10%;
+                                margin-top: 4px;*/
+                                vertical-align: top;
+                                width: 10px;
+                            }
+                            &.doted-section p {
+                                margin: 10px 0;
+                                display: inline-block;
+                                padding: 0;
+                                vertical-align: super;
+                                width: 80%;
+                            }
+
+                        }
+                    }
+                }
+            }
+            .footer-container {
+                background: $dark-blue;
+            }
+        }
+    }
+}
+
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -686,6 +755,30 @@ html {
         section#menu {
             #hamburger {
                 display: none;
+            }
+
+            &.scrolled {
+                #fixed-web-navigation {
+                    display: inline-block;
+                    font-family: $link-font;
+                    font-size: 1.1em;
+                    margin-left: -350px;
+                    margin-top: 4px;
+                    position: fixed;
+                    ul {
+                        list-style-type: none;
+                        margin: 0;
+                        -moz-padding-start: 0;
+                        -webkit-padding-start: 0;
+                        li {
+                            display: inline-block;
+                            padding: 15px;
+                            a {
+
+                            }
+                        }
+                    }
+                }
             }
         }
         .container {
@@ -904,6 +997,33 @@ html {
                 }
             }
         }
+        .container.not-landing-page-container {
+            .header-container {
+                padding-bottom: 25px;
+            }
+            .main-container {
+                .main.wrapper {
+                    article {
+                        margin-bottom: 100px;
+                        section {
+                            h2 {
+                                padding: 0 20%;
+                            }
+                            p {
+                                padding: 0 20%;
+                            }
+                            .green-dot {
+                                margin: 14px 10px 0 20%;
+                            }
+                            &.doted-section p {
+                                padding: 0;
+                                width: 60%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         .border-rounded-button {
             padding: 6px 20px;
             .icon {
@@ -918,6 +1038,13 @@ html {
 
 @media only screen and (min-width: 1200px) {
     html body {
+        section#menu {
+            &.scrolled {
+                #fixed-web-navigation {
+                    margin-left: -250px;
+                }
+            }
+        }
         .container {
             .header-container {
                 header.title {
