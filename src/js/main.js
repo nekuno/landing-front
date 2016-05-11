@@ -99,7 +99,7 @@
 
     function initSectionScrollIfLargeScreen() {
         var existsContentScrollable = $('.scrollable-section').length;
-        if (existsContentScrollable && $(window).width() >= widthThreshold) {
+        if (!sectionScrollActive && existsContentScrollable && $(window).width() >= widthThreshold) {
             sectionScrollActive = true;
             $('body .container').sectionScroll();
         }
