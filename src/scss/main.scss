@@ -529,17 +529,23 @@ html {
                         section {
                             margin-top: 30px;
                             text-align: left;
-                            h2 {
+                            h2, h3 {
                                 color: $dark-purple;
                                 display: inline-block;
                                 font-size: 1.5em;
                                 padding: 0 10%;
                                 width: 100%;
                             }
+                            h3 {
+                                font-size: 1.3em;
+                            }
                             p {
                                 color: $dark-gray;
                                 font-size: 0.8em;
                                 padding: 0 10%;
+                            }
+                            a {
+                                color: $dark-gray;
                             }
                             .green-dot {
                                 background: $green;
@@ -1015,7 +1021,7 @@ html {
                     article {
                         margin-bottom: 100px;
                         section {
-                            h2 {
+                            h2, h3 {
                                 padding: 0 20%;
                             }
                             p {
