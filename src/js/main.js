@@ -101,7 +101,7 @@
         var existsContentScrollable = $('.scrollable-section').length;
         if (!sectionScrollActive && existsContentScrollable && $(window).width() >= widthThreshold) {
             sectionScrollActive = true;
-            $('body .container').sectionScroll();
+            $('body .container').sectionScroll({easing: 'easeInOutQuart'});
         }
     }
 

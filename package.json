@@ -7,8 +7,7 @@
     "install": "napa"
   },
   "napa": {
-    "sliiide": "ahmedrad/sliiide",
-    "section-scroll": "m-danish-iqbal/section-scroll"
+    "sliiide": "ahmedrad/sliiide"
   },
   "repository": {
     "type": "git",
@@ -17,7 +16,6 @@
   "author": "Nekuno",
   "homepage": "https://bitbucket.org/nekuno/landing#readme",
   "devDependencies": {
-    "Swipe": "github:thebird/Swipe",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^4.0.0",
@@ -25,12 +23,15 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.1",
     "napa": "^2.3.0",
-    "unslider": "github:idiot/unslider",
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
     "html5shiv": "^3.7.3",
     "jquery": "^1.11.3",
-    "normalize.css": "github:necolas/normalize.css"
+    "jquery.easing": "^1.3.2",
+    "normalize.css": "github:necolas/normalize.css",
+    "Swipe": "github:thebird/Swipe",
+    "section-scroll": "^2.0.0",
+    "unslider": "github:idiot/unslider"
   }
 }

@@ -54,7 +54,11 @@ gulp.task('copy-html5shiv', function() {
         .pipe(gulp.dest('www/js/vendor/'));
 });
 gulp.task('copy-jquery', function() {
-    return gulp.src('node_modules/jquery/dist/jquery.min.js')
+    var paths = [
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/jquery.easing/jquery.easing.min.js'
+    ];
+    return gulp.src(paths)
         .pipe(gulp.dest('www/js/vendor/'));
 });
 
