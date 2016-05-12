@@ -27,44 +27,46 @@
     /** End sliiide settings (Mobile navigation) **/
 
     /** Start Swipe settings (Mobile slider) **/
-    initSwipeIfSmallScreen();
-    $(window).on('resize', initSwipeIfSmallScreen);
+    if (isLandingPage) {
+        initSwipeIfSmallScreen();
+        $(window).on('resize', initSwipeIfSmallScreen);
 
-    var timeout = null;
-    function initSwipeIfSmallScreen() {
-        if (timeout) {
-            window.clearTimeout(timeout);
-        }
-        timeout = window.setTimeout(function () {
-            if ($(window).width() < widthThreshold && !window.mySwipe) {
-                window.mySwipe = new Swipe(document.getElementById('slider'), {
-                    startSlide: 0,
-                    speed: 400,
-                    auto: 3000,
-                    continuous: true,
-                    disableScroll: false,
-                    stopPropagation: false,
-                    callback: changeActiveDot
-                });
-
-                $('.slider-dots .slider-dot').on('click', goToSlide)
-
-            } else if ($(window).width() >= widthThreshold && window.mySwipe) {
-                window.mySwipe.kill();
-                window.mySwipe = null;
-                $('.slider-dots .slider-dot').off('click')
+        var timeout = null;
+        function initSwipeIfSmallScreen() {
+            if (timeout) {
+                window.clearTimeout(timeout);
             }
-        }, 500);
-    }
-    function changeActiveDot(index) {
-        var sliderDotsElems = $('.slider-dots .slider-dot');
-        sliderDotsElems.closest('.active').removeClass('active');
-        sliderDotsElems.eq(index).addClass('active');
-    }
+            timeout = window.setTimeout(function () {
+                if ($(window).width() < widthThreshold && !window.mySwipe) {
+                    window.mySwipe = new Swipe(document.getElementById('slider'), {
+                        startSlide: 0,
+                        speed: 400,
+                        auto: 3000,
+                        continuous: true,
+                        disableScroll: false,
+                        stopPropagation: false,
+                        callback: changeActiveDot
+                    });
 
-    function goToSlide(e) {
-        var index = $(e.target).data('index');
-        window.mySwipe.slide(index);
+                    $('.slider-dots .slider-dot').on('click', goToSlide)
+
+                } else if ($(window).width() >= widthThreshold && window.mySwipe) {
+                    window.mySwipe.kill();
+                    window.mySwipe = null;
+                    $('.slider-dots .slider-dot').off('click')
+                }
+            }, 500);
+        }
+        function changeActiveDot(index) {
+            var sliderDotsElems = $('.slider-dots .slider-dot');
+            sliderDotsElems.closest('.active').removeClass('active');
+            sliderDotsElems.eq(index).addClass('active');
+        }
+
+        function goToSlide(e) {
+            var index = $(e.target).data('index');
+            window.mySwipe.slide(index);
+        }
     }
 
     /** End Swipe settings (Mobile slider) **/
@@ -93,22 +95,24 @@
     /** End fixed menu settings **/
 
     /** Start section scroll settings **/
-    var sectionScrollActive = false;
-    initSectionScrollIfLargeScreen();
-    $(window).on('resize', initSectionScrollIfLargeScreen);
+    if (isLandingPage) {
+        var sectionScrollActive = false;
+        initSectionScrollIfLargeScreen();
+        $(window).on('resize', initSectionScrollIfLargeScreen);
 
-    function initSectionScrollIfLargeScreen() {
-        var existsContentScrollable = $('.scrollable-section').length;
-        if (!sectionScrollActive && existsContentScrollable && $(window).width() >= widthThreshold) {
-            sectionScrollActive = true;
-            $('body .container').sectionScroll({easing: 'easeInOutQuart'});
+        function initSectionScrollIfLargeScreen() {
+            var existsContentScrollable = $('.scrollable-section').length;
+            if (!sectionScrollActive && existsContentScrollable && $(window).width() >= widthThreshold) {
+                sectionScrollActive = true;
+                $('body .container').sectionScroll({easing: 'easeInOutQuart'});
+            }
         }
     }
 
     /** End fixed menu settings (on scroll) **/
 
     /** Start RSS settings **/
-    var feed = "http://brain.pre.nekuno.com/client/blog-feed";
+    var feed = "//brain.pre.nekuno.com/client/blog-feed";
 
     $.ajax(feed, {
         accepts:{
@@ -138,4 +142,8 @@
             //console.log(error);
         }
     });
+
+    function isLandingPage() {
+        return window.location.pathname === '/';
+    }
 })(jQuery);
