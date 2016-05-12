@@ -292,10 +292,13 @@ html {
                         }
 
                         .for-you {
+                            margin-top: -30px;
                             height: 500px;
-                            margin-top: 30px;
+                            padding-top: 30px;
                         }
                         .amazing {
+                            margin-top: -30px;
+                            padding-top: 30px;
                             figure#cards-overview {
                                 background: url('img/cards-overview-320.png') no-repeat;
                                 background-size: 100% auto;
@@ -303,6 +306,8 @@ html {
                             }
                         }
                         .look-like {
+                            margin-top: -30px;
+                            padding-top: 30px;
                             overflow-x: hidden;
                             .slider-transparency-layer {
                                 background-image: linear-gradient(180deg, $slider-transparency-layer-bottom 0%, $slider-transparency-layer-top 100%);
