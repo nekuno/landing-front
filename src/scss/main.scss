@@ -566,7 +566,49 @@ html {
                                 vertical-align: super;
                                 width: 85%;
                             }
+                            form {
+                                label {
+                                    color: $dark-gray;
+                                    display: block;
+                                }
+                                input, textarea {
+                                    -webkit-border-radius: 5px;
+                                    -moz-border-radius: 5px;
+                                    border-radius: 5px;
+                                    margin: 20px 0;
+                                    width: 100%;
+                                }
+                                button {
+                                    background: #338061;
+                                    border-radius: 5px;
+                                    cursor: pointer;
+                                    padding: 10px 20px;
+                                    color: white;
+                                    border: none;
+                                }
+                            }
+                        }
+                        section#flash-messages-wrapper {
+                            color: $dark-gray;
+                            margin-bottom: 30px;
+                            margin-top: 30px;
+                            .notification {
+                                border: 1px solid $dark-gray;
+                                -webkit-border-radius: 5px;
+                                -moz-border-radius: 5px;
+                                border-radius: 5px;
+                                padding: 10px;
 
+                                &.info {
+                                    background: #fff689;
+                                }
+                                &.success {
+                                    background: #338061;
+                                }
+                                &.error {
+                                    background: #ff5a5b;
+                                }
+                            }
                         }
                     }
                 }
