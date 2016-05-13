@@ -527,13 +527,14 @@ html {
                     article {
                         margin-bottom: 50px;
                         section {
+                            padding: 0 10%;
                             margin-top: 30px;
                             text-align: left;
                             h2, h3 {
                                 color: $dark-purple;
                                 display: inline-block;
                                 font-size: 1.5em;
-                                padding: 0 10%;
+                                padding: 0;
                                 width: 100%;
                             }
                             h3 {
@@ -542,7 +543,7 @@ html {
                             p {
                                 color: $dark-gray;
                                 font-size: 0.8em;
-                                padding: 0 10%;
+                                padding: 0;
                             }
                             a {
                                 color: $dark-gray;
@@ -554,10 +555,7 @@ html {
                                 border-radius: 50%;
                                 display: inline-block;
                                 height: 10px;
-                                margin: 14px 10px 0 10%;
-                                /*margin-right: 10px;
-                                margin-left: 10%;
-                                margin-top: 4px;*/
+                                margin: 14px 10px 0 2%;
                                 vertical-align: top;
                                 width: 10px;
                             }
@@ -566,7 +564,7 @@ html {
                                 display: inline-block;
                                 padding: 0;
                                 vertical-align: super;
-                                width: 80%;
+                                width: 85%;
                             }
 
                         }
@@ -596,6 +594,19 @@ html {
                 padding-top: 55px;
             }
         }
+        .container.not-landing-page-container {
+            .main-container {
+                .main.wrapper {
+                    article {
+                        section {
+                            &.doted-section p {
+                                width: 89%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -606,8 +617,6 @@ html {
             background: url('img/background-girl-with-hat-and-app-overview-480.png') center top no-repeat;
             background-size: 480px auto;
             .main-container {
-                //padding-top: 100px;
-
                 .main.wrapper {
                     article {
                         .scrollable-section section.app-store-buttons {
@@ -617,7 +626,6 @@ html {
                             height: 690px;
                         }
                         .amazing {
-                            //margin-top: -20px;
                             figure#cards-overview {
                                 background: url('img/cards-overview-480.png') no-repeat;
                                 background-size: 100% auto;
@@ -749,6 +757,20 @@ html {
                         }
                     }
 
+                }
+            }
+        }
+
+        .container.not-landing-page-container {
+            .main-container {
+                .main.wrapper {
+                    article {
+                        section {
+                            &.doted-section p {
+                                width: 93%;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1021,18 +1043,19 @@ html {
                     article {
                         margin-bottom: 100px;
                         section {
+                            padding: 0 20%;
                             h2, h3 {
-                                padding: 0 20%;
+                                padding: 0;
                             }
                             p {
-                                padding: 0 20%;
+                                padding: 0;
                             }
                             .green-dot {
-                                margin: 14px 10px 0 20%;
+                                margin: 14px 10px 0 2%;
                             }
                             &.doted-section p {
                                 padding: 0;
-                                width: 60%;
+                                width: 93%;
                             }
                         }
                     }
