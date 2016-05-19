@@ -66,7 +66,7 @@ textarea {
 
 html {
     margin: auto;
-    max-width: 1440px;
+    max-width: 2880px;
 
     body {
         background: $dark-blue;
@@ -170,7 +170,7 @@ html {
         section#menu {
             background-color: transparent;
             height: 60px;
-            max-width: 1440px;
+            max-width: 2880px;
             position: absolute;
             top: 0;
             width: 100%;
@@ -313,7 +313,7 @@ html {
                             .slider-transparency-layer {
                                 background-image: linear-gradient(180deg, $slider-transparency-layer-bottom 0%, $slider-transparency-layer-top 100%);
                                 height: 500px;
-                                max-width: 1440px;
+                                max-width: 2880px;
                                 position: absolute;
                                 width: 100%;
                                 z-index: -1;
@@ -1132,6 +1132,40 @@ html {
             .header-container {
                 header.title {
                     padding-left: 100px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1441px) and (max-width: 1920px) {
+    html body {
+        font-size: 1.4em;
+
+        .container {
+            background: url('img/background-girl-with-hat-and-app-overview-1920.png') center top no-repeat;
+            background-size: 1920px auto;
+
+            .main-container {
+                padding-top: 450px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1921px) {
+    html body {
+        font-size: 1.5em;
+
+        .container {
+            background: url('img/background-girl-with-hat-and-app-overview-2880.png') center top no-repeat;
+            background-size: 2880px auto;
+
+            .main-container {
+                padding-top: 700px;
+
+                .main.wrapper article .amazing {
+                    margin-top: 400px;
                 }
             }
         }
