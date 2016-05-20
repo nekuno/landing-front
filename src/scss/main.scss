@@ -1147,7 +1147,11 @@ html {
             background-size: 1920px auto;
 
             .main-container {
-                padding-top: 450px;
+                padding-top: 150px;
+
+                .main.wrapper article .amazing {
+                    margin-top: 300px;
+                }
             }
         }
     }
@@ -1162,10 +1166,10 @@ html {
             background-size: 2880px auto;
 
             .main-container {
-                padding-top: 500px;
+                padding-top: 250px;
 
                 .main.wrapper article .amazing {
-                    margin-top: 400px;
+                    margin-top: 900px;
                 }
             }
         }
