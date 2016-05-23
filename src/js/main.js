@@ -1,7 +1,4 @@
 (function($) {
-
-    var widthThreshold = 1025;
-
     /** Start sliiide settings (Mobile navigation) **/
     var settings = {
         toggle: "#hamburger", // the selector for the menu toggle, whatever clickable element you want to activate or deactivate the menu. A click listener will be added to this element.
@@ -27,7 +24,7 @@
     /** End sliiide settings (Mobile navigation) **/
 
     /** Start Swipe settings (Mobile slider) **/
-    if (isLandingPage) {
+    if (isLandingPage()) {
         initSwipeIfSmallScreen();
         $(window).on('resize', initSwipeIfSmallScreen);
 
@@ -37,7 +34,7 @@
                 window.clearTimeout(timeout);
             }
             timeout = window.setTimeout(function () {
-                if ($(window).width() < widthThreshold && !window.mySwipe) {
+                if (!isDesktopWidth() && !window.mySwipe) {
                     window.mySwipe = new Swipe(document.getElementById('slider'), {
                         startSlide: 0,
                         speed: 400,
@@ -50,7 +47,7 @@
 
                     $('.slider-dots .slider-dot').on('click', goToSlide)
 
-                } else if ($(window).width() >= widthThreshold && window.mySwipe) {
+                } else if (isDesktopWidth() && window.mySwipe) {
                     window.mySwipe.kill();
                     window.mySwipe = null;
                     $('.slider-dots .slider-dot').off('click')
@@ -95,14 +92,14 @@
     /** End fixed menu settings **/
 
     /** Start section scroll settings **/
-    if (isLandingPage) {
+    if (isLandingPage()) {
         var sectionScrollActive = false;
         initSectionScrollIfLargeScreen();
         $(window).on('resize', initSectionScrollIfLargeScreen);
 
         function initSectionScrollIfLargeScreen() {
             var existsContentScrollable = $('.scrollable-section').length;
-            if (!sectionScrollActive && existsContentScrollable && $(window).width() >= widthThreshold) {
+            if (!sectionScrollActive && existsContentScrollable && isDesktopWidth()) {
                 sectionScrollActive = true;
                 $('body .container').sectionScroll({easing: 'easeInOutQuart'});
             }
@@ -143,7 +140,21 @@
         }
     });
 
+    /* Parallax example */
+    /*$(window).bind('scroll', parallaxScroll);
+
+
+    function parallaxScroll(){
+        var scrolled = $(window).scrollTop();
+        $('.main-container').css('top',(scrolled*.25)+'px');
+    }*/
+
     function isLandingPage() {
         return window.location.pathname === '/';
+    }
+
+    function isDesktopWidth() {
+        /** Check media query rule instead of $(window).width, which could cause weird results **/
+        return $('.swipe-wrap > div').first().css('display') == 'inline-block';
     }
 })(jQuery);

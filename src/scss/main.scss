@@ -319,7 +319,7 @@ html {
                                 z-index: -1;
                             }
                             figure#users-overview {
-                                margin: -100px auto 0 -20%;
+                                margin: -100px auto 0 0;
                                 width: 874px;
                             }
                             #slider {
@@ -677,7 +677,7 @@ html {
                         }
                         .look-like {
                             figure#users-overview {
-                                margin: -75px auto 0 -10%;
+                                margin: -75px auto 0 0;
                             }
                         }
                     }
@@ -721,7 +721,7 @@ html {
                         }
                         .look-like {
                             figure#users-overview {
-                                margin: 0 auto 0 -5%;
+                                margin: 0 auto 0 0;
                             }
                         }
                         .holy-privacy {
@@ -887,6 +887,7 @@ html {
                             display: inline-block;
                             padding: 15px;
                             position: relative;
+                            z-index: 111;
                             a {
 
                             }
@@ -934,13 +935,11 @@ html {
                                 h3 {
                                     font-size: 0.7em;
                                     margin: 30px 0 2%;
-                                    max-width: 300px;
                                     padding: 0;
                                 }
                                 p {
                                     font-size: 0.6em;
                                     margin: 5px 2% 30px 2%;
-                                    max-width: 300px;
                                     padding: 0;
                                 }
                             }
@@ -951,8 +950,9 @@ html {
                             .swipe-wrap > div {
                                 display: inline-block;
                                 float: none;
+                                margin: 0 5%;
                                 vertical-align: text-top;
-                                width: 30%;
+                                width: 20%;
                             }
                             .slider-dots {
                                 display: none;
@@ -1069,7 +1069,9 @@ html {
                                         font-size: 1.2em;
                                         opacity: 0.42;
                                         padding-left: 10px;
+                                        position: absolute;
                                         vertical-align: top;
+                                        z-index: 111;
                                     }
                                 }
                             }
@@ -1114,7 +1116,7 @@ html {
         }
         .bullets-container {
             display: table;
-            z-index: 0;
+            z-index: 1;
         }
     }
 }
