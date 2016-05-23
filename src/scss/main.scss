@@ -87,6 +87,8 @@ html {
             &.button {
                 background: $green;
                 border-radius: 17px;
+                -webkit-border-radius: 17px;
+                -moz-border-radius: 17px;
                 font-family: $nekuno-font;
                 font-weight: 700;
                 height: 15px;
@@ -100,6 +102,8 @@ html {
         .border-rounded-button {
             border: 1px solid $deep-purple;
             border-radius: 100px;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
             cursor: pointer;
             display: inline-block;
             font-size: 0.9em;
@@ -174,7 +178,7 @@ html {
             position: absolute;
             top: 0;
             width: 100%;
-            z-index: 111;
+            z-index: 1111;
             -webkit-transition: background-color 400ms ease-out;
             -moz-transition: background-color 400ms ease-out;
             -o-transition: background-color 400ms ease-out;
@@ -420,6 +424,8 @@ html {
                                 background: white;
                                 border: 1px solid $blog-section-border;
                                 border-radius: 10px;
+                                -webkit-border-radius: 10px;
+                                -moz-border-radius: 10px;
                                 cursor: pointer;
                                 margin: 10px;
                                 text-align: left;
@@ -436,6 +442,8 @@ html {
                                         figcaption {
                                             background: $dark-purple;
                                             border-radius: 12px;
+                                            -webkit-border-radius: 12px;
+                                            -moz-border-radius: 12px;
                                             color: white;
                                             font-size: 0.8em;
                                             font-weight: bold;
@@ -582,6 +590,8 @@ html {
                                 button {
                                     background: #338061;
                                     border-radius: 5px;
+                                    -webkit-border-radius: 5px;
+                                    -moz-border-radius: 5px;
                                     cursor: pointer;
                                     padding: 10px 20px;
                                     color: white;
