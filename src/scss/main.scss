@@ -429,6 +429,10 @@ html {
                                 cursor: pointer;
                                 margin: 10px;
                                 text-align: left;
+
+                                a {
+                                    color: $dark-purple;
+                                }
                                 header {
                                     figure {
                                         margin: 0;

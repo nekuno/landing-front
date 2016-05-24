@@ -123,14 +123,14 @@
                     return false;
                 }
                 var el = $(this);
-
                 articles.eq(index).attr('onclick', 'window.location = "' + el.find("link").text() + '"');
                 articles.eq(index).find('header h3').html(el.find("title").text());
-                articles.eq(index).find('header figure figcaption').html(el.find("category").text() || 'Sin categoría');
+                articles.eq(index).find('header figure figcaption').html(el.find("category").eq(0).text() || 'Sin categoría');
                 articles.eq(index).find('header figure img').attr('src', el.find("image").text() || 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=');
                 articles.eq(index).find('time').html(el.find("pubDate").text());
                 articles.eq(index).find('p').html(el.find("description").text());
                 articles.eq(index).find('.comments-number').html(el.find("slash:comments").text() || 0);
+                return true;
             });
         },
         error: function (jqXHR, status, error) {
