@@ -142,14 +142,14 @@
         }
     });
 
-    /* Parallax example */
-    /*$(window).bind('scroll', parallaxScroll);
+    /* Parallax */
+    $(window).on('scroll', parallaxScroll);
 
 
     function parallaxScroll(){
         var scrolled = $(window).scrollTop();
-        $('.main-container').css('top',(scrolled*.25)+'px');
-    }*/
+        $('.for-you-background').css('top', (scrolled*.35)+'px');
+    }
 
     function isLandingPage() {
         return window.location.pathname === '/';
