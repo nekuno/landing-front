@@ -25,8 +25,6 @@
 
     /** Start Swipe settings (Mobile slider) **/
     if (isLandingPage()) {
-        initSwipeIfSmallScreen();
-        $(window).on('resize', initSwipeIfSmallScreen);
 
         var timeout = null;
         function initSwipeIfSmallScreen() {
@@ -64,6 +62,10 @@
             var index = $(e.target).data('index');
             window.mySwipe.slide(index);
         }
+
+        initSwipeIfSmallScreen();
+        $(window).on('resize', initSwipeIfSmallScreen);
+
     }
 
     /** End Swipe settings (Mobile slider) **/
@@ -96,20 +98,20 @@
         var sectionScrollActive = false;
         initSectionScrollIfLargeScreen();
         $(window).on('resize', initSectionScrollIfLargeScreen);
+    }
 
-        function initSectionScrollIfLargeScreen() {
-            var existsContentScrollable = $('.scrollable-section').length;
-            if (!sectionScrollActive && existsContentScrollable && isDesktopWidth()) {
-                sectionScrollActive = true;
-                $('body .container').sectionScroll({easing: 'easeInOutQuart'});
-            }
+    function initSectionScrollIfLargeScreen() {
+        var existsContentScrollable = $('.scrollable-section').length;
+        if (!sectionScrollActive && existsContentScrollable && isDesktopWidth()) {
+            sectionScrollActive = true;
+            $('body .container').sectionScroll({easing: 'easeInOutQuart'});
         }
     }
 
     /** End fixed menu settings (on scroll) **/
 
     /** Start RSS settings **/
-    var feed = "//brain.pre.nekuno.com/client/blog-feed";
+    var feed = "//brain.nekuno.com/client/blog-feed";
 
     $.ajax(feed, {
         accepts:{
